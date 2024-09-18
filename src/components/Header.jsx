@@ -4,30 +4,33 @@ const Header = () => {
   return (
     
     <header className="w-full h-auto bg-gradient-to-r from-[#7A6F6F] to-[#583C3C] pt-5">
-    <div className="container mx-auto flex flex-col justify-center items-center">
+    <div className="container mx-auto flex flex-col justify-center items-center gap-2">
       {/* Logo */}
       <div className=" text-name-orange text-6xl font-bold font-glazkrak">
-        <a href="/">INDÈNUM</a>
+        <a href="/">INDÉNUM</a>
       </div>
 
         {/* Slogan */}
     
-      <p className="text-white">Service de Réparation pour vos objets électroniques</p>
+      <p className="text-white font-semibold container w-3/4 text-xs">Service de Réparation pour vos objets électroniques</p>
 
       {/* Navigation */}
-      <nav>
-        <ul className="flex space-x-4">
+      <nav className="w-full mt-2">
+        <ul className="w-full h-8 flex justify-center items-center gap-3 bg-name-orange">
           <li>
-            <a href="#home" className="text-white hover:text-gray-300">Home</a>
+            <a href="#home" className="text-white font-semibold hover:text-gray-300">Accueil</a>
           </li>
           <li>
-            <a href="#about" className="text-white hover:text-gray-300">About</a>
+            <a href="#about" className="text-white font-semibold hover:text-gray-300">Tarifs</a>
           </li>
           <li>
-            <a href="#services" className="text-white hover:text-gray-300">Services</a>
+            <a href="#services" className="text-white font-semibold hover:text-gray-300">Annonces</a>
           </li>
           <li>
-            <a href="#contact" className="text-white hover:text-gray-300">Contact</a>
+            <a href="#contact" className="text-white font-semibold hover:text-gray-300">Devis</a>
+          </li>
+          <li>
+            <a href="#contact" className="text-white font-semibold hover:text-gray-300">Contact</a>
           </li>
         </ul>
       </nav>
