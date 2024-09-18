@@ -6,6 +6,12 @@ export default {
   ],
   theme: {
     extend: {},
+    fontFamily: {
+      glazkrak: ['GlazKrak', 'sans-serif'],
+    },
+    colors:{
+      'name-orange': '#E37E21',
+    }
   },
   plugins: [],
 }

@@ -2,12 +2,17 @@ import React from "react";
 
 const Header = () => {
   return (
-    <header className="bg-blue-600 p-4">
-    <div className="container mx-auto flex justify-between items-center">
+    
+    <header className="w-full h-auto bg-gradient-to-r from-[#7A6F6F] to-[#583C3C] pt-5">
+    <div className="container mx-auto flex flex-col justify-center items-center">
       {/* Logo */}
-      <div className="text-white text-2xl font-bold">
-        <a href="/">MyLogo</a>
+      <div className=" text-name-orange text-6xl font-bold font-glazkrak">
+        <a href="/">INDÈNUM</a>
       </div>
+
+        {/* Slogan */}
+    
+      <p className="text-white">Service de Réparation pour vos objets électroniques</p>
 
       {/* Navigation */}
       <nav>
