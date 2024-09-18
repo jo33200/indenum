@@ -11,6 +11,8 @@ export default {
     },
     colors:{
       'name-orange': '#E37E21',
+      'white': '#ffffff',
+      'black': '#000000',
     }
   },
   plugins: [],
