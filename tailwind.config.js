@@ -5,7 +5,7 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
     fontFamily: {
       glazkrak: ['GlazKrak', 'sans-serif'],
     },
@@ -14,6 +14,7 @@ export default {
       'white': '#ffffff',
       'black': '#000000',
     }
+  },
   },
   plugins: [],
 }
