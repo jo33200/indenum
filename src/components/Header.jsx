@@ -7,11 +7,10 @@ const Header = () => {
     <div className="w-full flex flex-col justify-center items-center gap-2">
       {/* Logo */}
       <div className=" text-name-orange text-6xl font-bold font-glazkrak">
-        <a href="/">INDÉNUM</a>
+        <h1>INDÉNUM</h1>
       </div>
 
         {/* Slogan */}
-    
       <p className="text-white font-semibold container w-3/4 text-xs">Service de Réparation pour vos objets électroniques</p>
 
       {/* Navigation */}
