@@ -67,18 +67,18 @@ const CardFilterPage = () => {
   return (
     <div className="container mx-auto p-4 flex flex-col items-center gap-5">
       {/* Conteneur des filtres, aligné à gauche avec Flexbox */}
-      <div className="w-72 p-4 bg-gray-100 shadow-md rounded-lg">
+      <div className="w-72 p-2 bg-gray-100 shadow-md rounded-lg">
         <h2 className="text-lg text-left font-bold mb-4">Notre catalogue</h2>
 
         {/* Parcourir les catégories de filtres */}
         {filterData.map((filter) => (
-          <div key={filter.category} className="mb-4">
+          <div key={filter.category} className="mb-1">
             {/* Titre de la catégorie */}
             <div
               className="cursor-pointer flex justify-between items-center bg-gray-200 p-2 rounded-md"
               onClick={() => toggleCategory(filter.category)}
             >
-              <span className="font-semibold text-blue-500">{filter.category}</span>
+              <span className="font-semibold">{filter.category}</span>
               <span className="text-xl">
                 {openCategories[filter.category] ? "−" : "+"}
               </span>
