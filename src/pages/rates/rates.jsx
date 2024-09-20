@@ -68,7 +68,7 @@ const CardFilterPage = () => {
     <div className="container mx-auto p-4 flex flex-col items-center gap-5">
       {/* Conteneur des filtres, aligné à gauche avec Flexbox */}
       <div className="w-72 p-4 bg-gray-100 shadow-md rounded-lg">
-        <h2 className="text-lg font-bold mb-4">Notre catalogue</h2>
+        <h2 className="text-lg text-left font-bold mb-4">Notre catalogue</h2>
 
         {/* Parcourir les catégories de filtres */}
         {filterData.map((filter) => (
@@ -103,7 +103,7 @@ const CardFilterPage = () => {
                       {openCategories[subcat.subcategory] && (
                         <div className="ml-4 mt-1">
                           {subcat.subSubcategories.map((subSubcat) => (
-                            <div key={subSubcat} className="mt-1">
+                            <div key={subSubcat} className="mt-1 flex items-center">
                               <label className="inline-flex items-center">
                                 <input
                                   type="checkbox"
@@ -122,7 +122,7 @@ const CardFilterPage = () => {
                   ))
                 ) : (
                   filter.subcategories.map((subcategory) => (
-                    <div key={subcategory} className="ml-4 mb-2">
+                    <div key={subcategory} className="ml-4 mb-2 flex">
                       <label className="inline-flex items-center">
                         <input
                           type="checkbox"
