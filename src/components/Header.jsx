@@ -1,4 +1,4 @@
-
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   return (
@@ -18,19 +18,19 @@ const Header = () => {
       <nav className="w-full mt-2">
         <ul className="w-full h-8 flex justify-center items-center gap-3 bg-name-orange">
           <li>
-            <a href="#home" className="text-white font-semibold hover:text-gray-300">Accueil</a>
+            <Link to="/" className="text-white font-semibold hover:text-gray-300">Accueil</Link>
           </li>
           <li>
-            <a href="#about" className="text-white font-semibold hover:text-gray-300">Tarifs</a>
+            <Link to="/rates" className="text-white font-semibold hover:text-gray-300">Tarifs</Link>
           </li>
           <li>
-            <a href="#services" className="text-white font-semibold hover:text-gray-300">Annonces</a>
+            <Link to="/ad" className="text-white font-semibold hover:text-gray-300">Annonces</Link>
           </li>
           <li>
-            <a href="#contact" className="text-white font-semibold hover:text-gray-300">Devis</a>
+            <Link to="/quote" className="text-white font-semibold hover:text-gray-300">Devis</Link>
           </li>
           <li>
-            <a href="#contact" className="text-white font-semibold hover:text-gray-300">Contact</a>
+            <Link to="/contact" className="text-white font-semibold hover:text-gray-300">Contact</Link>
           </li>
         </ul>
       </nav>
