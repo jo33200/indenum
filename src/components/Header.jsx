@@ -4,7 +4,7 @@ const Header = () => {
   return (
     
     <header className="w-full h-auto bg-gradient-to-r from-[#7A6F6F] to-[#583C3C] pt-5">
-    <div className="container mx-auto flex flex-col justify-center items-center gap-2">
+    <div className="w-full flex flex-col justify-center items-center gap-2">
       {/* Logo */}
       <div className=" text-name-orange text-6xl font-bold font-glazkrak">
         <a href="/">INDÉNUM</a>
