@@ -59,7 +59,7 @@ CardAD.propTypes = {
 // Composant qui affiche une liste d'annonces
 const AdsList = () => {
   return (
-    <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 py-8">
+    <div className="container mx-auto flex justify-center flex-wrap gap-4">
       {adsData.map((ad, index) => (
         <CardAD
           key={index}
