@@ -1,4 +1,4 @@
-import React from "react";
+import PropTypes from "prop-types";
 
 // Exemple de données statiques pour les annonces
 const adsData = [
@@ -25,7 +25,7 @@ const adsData = [
   },
 ];
 
-const CardAD = ({ title, description, price, location, image, url }) => {
+const CardAD = ({ title, description, price, image, url }) => {
   return (
     <div className="max-w-sm rounded overflow-hidden shadow-lg bg-white py-4">
       <img className="w-full" src={image} alt={title} />
@@ -33,20 +33,27 @@ const CardAD = ({ title, description, price, location, image, url }) => {
         <div className="font-bold text-xl mb-2">{title}</div>
         <p className="text-gray-700 text-base">{description}</p>
         <p className="font-semibold mt-2">{price}</p>
-        <p className="text-gray-600 text-sm">{location}</p>
       </div>
       <div className="px-6 pt-4 pb-2">
         <a
           href={url}
           target="_blank"
           rel="noopener noreferrer"
-          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+          className="bg-name-orange hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
         >
           Voir annonce
         </a>
       </div>
     </div>
   );
+};
+
+CardAD.propTypes = {
+    title: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    price: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired,
+    url: PropTypes.string.isRequired,
 };
 
 // Composant qui affiche une liste d'annonces
