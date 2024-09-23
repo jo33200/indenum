@@ -8,6 +8,7 @@ const adsData = [
     price: "30€",
     image: "https://img.leboncoin.fr/api/v1/lbcpb1/images/61/98/fe/6198fe89750f8d88a1c3b8273bdbde492d3b7a86.jpg?rule=classified-1200x800-webp",
     url: "https://www.leboncoin.fr/ad/consoles/2842841235", 
+    category: "Sony",
   },
   {
     title: "Batterie Joy-Con Nintendo Switch",
