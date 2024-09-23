@@ -16,6 +16,7 @@ const adsData = [
     price: "10€",
     image: "https://img.leboncoin.fr/api/v1/lbcpb1/images/a8/5a/1b/a85a1bc987565f613868c55c684a50d2e710c2b5.jpg?rule=classified-1200x800-webp",
     url: "https://www.leboncoin.fr/ad/consoles/2844352853",
+    category: "Nintendo",
   },
   {
     title: "Lecteur de Carte microSD Nintendo Switch",
@@ -23,6 +24,31 @@ const adsData = [
     price: "10€",
     image: "https://img.leboncoin.fr/api/v1/lbcpb1/images/08/a0/b9/08a0b9ffde443a48d3a512fc9a6f3f288031d01a.jpg?rule=classified-1200x800-webp",
     url: "https://www.leboncoin.fr/ad/consoles/2829367655",
+    category: "Nintendo",
+  },
+  {
+    title: "Prise Jack Nintendo Switch Lite",
+    description: "Permet de régler les problèmes de micro et de son dans vos écouteurs.",
+    price: "8€",
+    image: "https://img.leboncoin.fr/api/v1/lbcpb1/images/6c/e1/ed/6ce1ede6de704dc0106547c5557d61ac289c6db7.jpg?rule=classified-1200x800-webp",
+    url: "https://www.leboncoin.fr/ad/consoles/2829363463",
+    category: "Nintendo",
+  },
+  {
+    title: "Adhésif Ecran iPhone X",
+    description: "Pour le changement de votre écran iPhone X, cet adhésif est indispensable",
+    price: "3€",
+    image: "https://img.leboncoin.fr/api/v1/lbcpb1/images/1a/75/47/1a7547284d875d87f57efb178f2040f79e083ffc.jpg?rule=classified-1200x800-webp",
+    url: "https://www.leboncoin.fr/ad/telephones_objets_connectes/2829358927",
+    category: "Apple",
+  },
+  {
+    title: "Batterie pour Manette PS4 Dualshock 4 V1 et V2",
+    description: "Batterie compatible Manette Sony PS4 Dualshock 4 V1 ou V2.",
+    price: "9€",
+    image: "https://img.leboncoin.fr/api/v1/lbcpb1/images/29/b2/fc/29b2fc7904c6e298800bf2f3a75b7fd569bc330d.jpg?rule=classified-1200x800-webp",
+    url: "https://www.leboncoin.fr/ad/consoles/2844355384",
+    category: "Sony",
   },
 ];
 
