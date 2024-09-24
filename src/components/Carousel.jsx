@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 
 const images = [
   {
-    src: "https://via.placeholder.com/800x400?text=Image+1",
+    src: "../../assets/img/Carousel1.png",
     alt: "Image 1",
   },
   {
