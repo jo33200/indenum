@@ -8,6 +8,7 @@ export default {
     extend: {
     fontFamily: {
       glazkrak: ['GlazKrak', 'sans-serif'],
+      openSans: ['Open Sans', 'sans-serif'],
     },
     colors:{
       'name-orange': '#E37E21',
