@@ -38,7 +38,6 @@ const Ad = () => {
 
   return (
     <div className='container mx-auto p-4 flex flex-col items-center gap-5'>
-      <h1 className='text-3xl font-bold text-center'>Nos annonces</h1>
       <div className='w-72 p-2'>
         <Filters
           filterData={filterData} 
