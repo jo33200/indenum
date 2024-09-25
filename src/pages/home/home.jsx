@@ -3,7 +3,7 @@ import CardHome from '../../components/CardHome';
 
 const HomePage = () => {
   return (
-    <div className=' bg-gradient-to-b from-[#E37E21] to-[#ffffff]'>
+    <div className=' bg-gradient-to-b from-[#E37E21] to-[#ffffff] h-auto'>
       <Carousel />
       <CardHome />
     </div> 
