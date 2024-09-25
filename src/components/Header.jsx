@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import Logo from '../assets/img/Indenum.png';
 
 const Header = () => {
   return (
@@ -6,8 +7,8 @@ const Header = () => {
     <header className="w-full h-auto bg-gradient-to-r from-[#7A6F6F] to-[#583C3C] pt-5">
     <div className="w-full flex flex-col justify-center items-center gap-2">
       {/* Logo */}
-      <div className=" text-name-orange text-6xl font-bold font-glazkrak">
-        <h1>INDÉNUM</h1>
+      <div>
+        <img src={Logo} alt="Indenum" />
       </div>
 
         {/* Slogan */}

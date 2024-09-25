@@ -1,12 +1,13 @@
+import Logo from '../assets/img/Indenum.png';
 
 const Footer = () => {
 
     return (   
 
-        <footer className="mt-10 w-full h-auto text-white flex flex-col justify-start items-start gap-10 bg-name-orange py-5 px-1">
+        <footer className=" w-full h-auto text-white flex flex-col justify-start items-start gap-10 bg-gradient-to-r from-[#7A6F6F] to-[#583C3C] py-5 px-1">
             
-            <div className="text-3xl font-bold font-glazkrak text-left">
-                <a href="/">INDÉNUM</a>
+            <div className="container w-36 text-left">
+                <img className='bg-contain' src={Logo} alt="Indenum" />
             </div>
             <nav className="w-full h-auto">
             <ul className="text-left flex flex-col justify-start items-start gap-1">
