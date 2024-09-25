@@ -1,9 +1,19 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 
-const Filters = ({ filterData, selectedFilters, onFilterChange }) => {
+const Filters = ({ filterData, selectedFilters, onFilterChange, openCategory }) => {
   // État local pour suivre quelles catégories sont ouvertes
   const [openCategories, setOpenCategories] = useState({});
+
+  // Utiliser useEffect pour ouvrir automatiquement la catégorie souhaitée
+  useEffect(() => {
+    if (openCategory) {
+      setOpenCategories((prev) => ({
+        ...prev,
+        [openCategory]: true, // Ouvrir la catégorie passée en prop
+      }));
+    }
+  }, [openCategory]);
 
   // Fonction pour gérer le clic et l'affichage des sous-menus
   const toggleCategory = (category) => {
@@ -95,6 +105,7 @@ Filters.propTypes = {
   ).isRequired,
   selectedFilters: PropTypes.arrayOf(PropTypes.string).isRequired,
   onFilterChange: PropTypes.func.isRequired,
+  openCategory: PropTypes.string, // Nouvelle prop pour la catégorie à ouvrir
 };
 
 export default Filters;

@@ -1,3 +1,4 @@
+import {Link} from 'react-router-dom';
 import PropTypes from 'prop-types';
 import Atelier from '../assets/img/atelier.jpg';
 import Casse from '../assets/img/casse.jpg';
@@ -12,54 +13,70 @@ const CardList = () => {
       title: 'Notre Atelier',
       image: Atelier,
       subtitle: 'Découvrir',
+      link : '/rates'
     },
     {
       title: "Besoin d'un devis rapide",
       image: Casse,
       subtitle: 'En savoir plus',
+      link : '/quote'
     },
     {
       title: 'Service de proximité',
       image: Proximite,
       subtitle: 'En savoir plus',
+      link : '/contact'
     },
     {
         title: 'Service pièces détachées',
         image: Pieces,
-        subtitle: 'Découvrir',
+        subtitle: 'Voir catalogue',
+        link : '/ad',
+        filter: 'pièces détachées',
       },
       {
         title: 'Nous contacter',
         image: Contact,
         subtitle: 'En savoir plus',
+        link : '/contact'
       },
   ];
 
   // Composant Card
-  const Card = ({ title, image, subtitle }) => {
+  const Card = ({ title, image, subtitle, link, filter }) => {
     return (
-      <div className="border shadow-lg p-4 max-w-sm bg-white">
-        <div className="p-4">
+      <div className="border shadow-lg  max-w-sm bg-white">
+        <div className="p-3 flex flex-col items-start gap-4">
             <h2 className="text-xl font-bold">{title}</h2>
-            <img src={image} alt={title} className="w-full h-48 object-cover " />
-            <h3 className="text-lg text-gray-500 mt-2">{subtitle}</h3>
+            <div className='container w-56'>
+                <img src={image} alt={title} className="w-full h-48 object-cover " />
+            </div>
+            <h3 className="text-sm font-bold text-gray-400">
+            {filter ? (
+              <Link to={`${link}?filter=${filter}`}>{subtitle}</Link>
+            ) : (
+              <Link to={link}>{subtitle}</Link>
+            )}
+          </h3>
         </div>
       </div>
     );
   };
 
   Card.propTypes = {
-    title: PropTypes.string.isRequired, // title doit être une string et est requis
-    image: PropTypes.string.isRequired, // image doit être une string et est requis
-    subtitle: PropTypes.string.isRequired, // subtitle doit être une string et est requis
+    title: PropTypes.string.isRequired, 
+    image: PropTypes.string.isRequired, 
+    subtitle: PropTypes.string.isRequired, 
+    link: PropTypes.string.isRequired,
+    filter: PropTypes.string, 
   };
 
   // Retourne la liste des cartes
   return (
     <div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-4">
+      <div className="flex flex-col justify-center items-center gap-6 p-4">
         {cardData.map((card, index) => (
-          <Card key={index} title={card.title} image={card.image} subtitle={card.subtitle} />
+          <Card key={index} title={card.title} image={card.image} subtitle={card.subtitle} link={card.link} filter={card.filter} />
         ))}
       </div>
     </div>

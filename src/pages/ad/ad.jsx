@@ -19,6 +19,10 @@ const Ad = () => {
       category: "Marque",
       subcategories: ["Apple", "Samsung", "Microsoft", "Sony", "Nintendo"],
     },
+    {
+      category: "Pièces détachées",
+      subcategories: ["Ecran", "Batterie", "Connecteur de charge", "Vitre arrière", "autres"],
+    }
   ];
 
   const handleFilterChange = (subcategory) => {
@@ -29,6 +33,9 @@ const Ad = () => {
     );
   };
 
+  // Ici, on va initialiser le filtre ouvert par défaut
+  const openCategory = "Pièces détachées"; // Définit la catégorie à ouvrir
+
   return (
     <div className='container mx-auto p-4 flex flex-col items-center gap-5'>
       <h1 className='text-3xl font-bold text-center'>Nos annonces</h1>
@@ -37,10 +44,10 @@ const Ad = () => {
           filterData={filterData} 
           selectedFilters={selectedFilters} 
           onFilterChange={handleFilterChange} 
+          openCategory={openCategory}  // Passer la catégorie à ouvrir
         />
-        </div>
-        <ListAd selectedFilters={selectedFilters} />
-      
+      </div>
+      <ListAd selectedFilters={selectedFilters} />
     </div>
   );
 };
