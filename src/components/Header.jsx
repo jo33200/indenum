@@ -16,7 +16,7 @@ const Header = () => {
 
       {/* Navigation */}
       <nav className="w-full mt-2">
-        <ul className="w-full h-8 flex justify-center items-center gap-3 bg-name-orange">
+        <ul className="w-full h-10 flex justify-center items-center gap-3 bg-neutral-700">
           <li>
             <Link to="/" className="text-white font-semibold hover:text-gray-300">Accueil</Link>
           </li>
