@@ -7,5 +7,11 @@ export default defineConfig({
   base: '/indenum/',
   server:{
     open: true,
-  }
+  },
+  resolve: {
+    extensions: ['.js', '.jsx'],  // Ajoute les extensions à reconnaître
+  },
+  esbuild: {
+    jsxInject: `import React from 'react'`,  // Pour injecter React automatiquement dans les fichiers .jsx si ce n'est pas fait manuellement
+  },
 })
