@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 
-const Filters = ({ filterData, selectedFilters, onFilterChange, openCategory }) => {
+const Filters = ({ filterData, selectedFilters, onFilterChange, openCategory, setOpenCategory }) => {
   // État local pour suivre quelles catégories sont ouvertes
   const [openCategories, setOpenCategories] = useState({});
 
@@ -21,7 +21,13 @@ const Filters = ({ filterData, selectedFilters, onFilterChange, openCategory }) 
       ...prev,
       [category]: !prev[category], // Alterner l'état de la catégorie (ouverte ou fermée)
     }));
+    
+    if (setOpenCategory) {
+      setOpenCategory("");
+    }
   };
+
+  
 
   return (
     <div className="mb-4 flex flex-col w-full bg-gray-100 p-4 rounded-md shadow-md">
@@ -106,6 +112,7 @@ Filters.propTypes = {
   selectedFilters: PropTypes.arrayOf(PropTypes.string).isRequired,
   onFilterChange: PropTypes.func.isRequired,
   openCategory: PropTypes.string, // Nouvelle prop pour la catégorie à ouvrir
+  setOpenCategory: PropTypes.func, // Nouvelle prop pour changer la catégorie ouverte
 };
 
 export default Filters;
