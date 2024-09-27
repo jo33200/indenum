@@ -1,5 +1,4 @@
 import { useState } from "react";
-import Filters from "../../components/filters";
 import Card from "../../components/CardRates";
 
 // Exemple de données de cartes
@@ -41,9 +40,8 @@ const filterData = [
 
 const CardFilterPage = () => {
   const [selectedFilters, setSelectedFilters] = useState([]);
-  const [openCategories, setOpenCategories] = useState({}); // État des catégories ouvertes
+  const [openCategories, setOpenCategories] = useState({});
 
-  // Gère la sélection des filtres
   const handleFilterChange = (subcategory) => {
     if (selectedFilters.includes(subcategory)) {
       setSelectedFilters(selectedFilters.filter((item) => item !== subcategory));
@@ -52,37 +50,30 @@ const CardFilterPage = () => {
     }
   };
 
-  // Gère l'affichage des sous-catégories
   const toggleCategory = (category) => {
     setOpenCategories((prevOpenCategories) => ({
       ...prevOpenCategories,
-      [category]: !prevOpenCategories[category],
+      [category]: !prevOpenCategories[category],  
+
     }));
   };
 
   const filteredCards = cardData.filter((card) =>
-    selectedFilters.length > 0 ? selectedFilters.includes(card.category) : true
+    selectedFilters.length === 0 || selectedFilters.includes(card.category)
   );
 
   return (
     <div className="container mx-auto p-4 flex flex-col items-center gap-5">
-      {/* Conteneur des filtres, aligné à gauche avec Flexbox */}
       <div className="w-72 p-2 bg-gray-100 shadow-md rounded-lg">
-        {/* Parcourir les catégories de filtres */}
         {filterData.map((filter) => (
           <div key={filter.category} className="mb-1">
-            {/* Titre de la catégorie */}
             <div
               className="cursor-pointer flex justify-between items-center bg-gray-200 p-2 rounded-md"
               onClick={() => toggleCategory(filter.category)}
             >
               <span className="font-semibold">{filter.category}</span>
-              <span className="text-xl">
-                {openCategories[filter.category] ? "−" : "+"}
-              </span>
+              <span className="text-xl">{openCategories[filter.category] ? "−" : "+"}</span>
             </div>
-
-            {/* Affichage des sous-catégories si la catégorie est ouverte */}
             {openCategories[filter.category] && (
               <div className="ml-4 mt-2">
                 {filter.category === "Console" ? (
@@ -93,11 +84,8 @@ const CardFilterPage = () => {
                         onClick={() => toggleCategory(subcat.subcategory)}
                       >
                         {subcat.subcategory}
-                        <span className="text-lg">
-                          {openCategories[subcat.subcategory] ? "−" : "+"}
-                        </span>
+                        <span className="text-lg">{openCategories[subcat.subcategory] ? "−" : "+"}</span>
                       </div>
-
                       {openCategories[subcat.subcategory] && (
                         <div className="ml-4 mt-1">
                           {subcat.subSubcategories.map((subSubcat) => (
@@ -140,12 +128,9 @@ const CardFilterPage = () => {
         ))}
       </div>
 
-      {/* Conteneur des cartes filtrées */}
       <div className="w-3/4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {filteredCards.length > 0 ? (
-          filteredCards.map((card, index) => (
-            <Card key={index} title={card.title} description={card.description} category={card.category} />
-          ))
+          filteredCards.map((card, index) => <Card key={index} {...card} />)
         ) : (
           <p>Aucune carte ne correspond aux filtres sélectionnés.</p>
         )}

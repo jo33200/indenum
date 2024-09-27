@@ -53,17 +53,10 @@ const CardList = () => {
             </div>
             <h3 className="text-sm font-bold text-gray-400">
             {filter ? (
-            <Link
-              to={{
-                pathname: link,
-                state: { openCategory: filter } // Ici, on passe le filtre "Pièces détachées"
-              }}
-            >
-              {subtitle}
-            </Link>
-          ) : (
-            <Link to={link}>{subtitle}</Link>
-          )}
+                <Link to={`${link}?filter=${encodeURIComponent(filter)}`}>{subtitle}</Link>
+              ) : (
+                <Link to={link}>{subtitle}</Link>
+              )}
           </h3>
         </div>
       </div>

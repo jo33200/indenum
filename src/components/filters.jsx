@@ -2,32 +2,33 @@ import { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 
 const Filters = ({ filterData, selectedFilters, onFilterChange, openCategory, setOpenCategory }) => {
-  // État local pour suivre quelles catégories sont ouvertes
   const [openCategories, setOpenCategories] = useState({});
 
-  // Utiliser useEffect pour ouvrir automatiquement la catégorie souhaitée
   useEffect(() => {
     if (openCategory) {
-      setOpenCategories((prev) => ({
-        ...prev,
-        [openCategory]: true, // Ouvrir la catégorie passée en prop
-      }));
+      console.log("Open category in useEffect:", openCategory);
+      
+      setOpenCategories((prev) => {
+        const updatedCategories = {
+          ...prev,
+          [openCategory]: true, // Ouvre la catégorie passée en prop
+        };
+        console.log("Updated openCategories:", updatedCategories);
+        return updatedCategories;
+      });
     }
   }, [openCategory]);
 
-  // Fonction pour gérer le clic et l'affichage des sous-menus
   const toggleCategory = (category) => {
-    setOpenCategories((prev) => ({
-      ...prev,
-      [category]: !prev[category], // Alterner l'état de la catégorie (ouverte ou fermée)
-    }));
-    
-    if (setOpenCategory) {
-      setOpenCategory("");
-    }
+    setOpenCategories((prev) => {
+      const newOpenState = !prev[category]; // Nouvelle logique pour savoir si la catégorie sera ouverte ou fermée
+      setOpenCategory(newOpenState ? category : ""); // Met à jour la catégorie ouverte dans le parent
+      return {
+        ...prev,
+        [category]: newOpenState, // Ouvre ou ferme la catégorie
+      };
+    });
   };
-
-  
 
   return (
     <div className="mb-4 flex flex-col w-full bg-gray-100 p-4 rounded-md shadow-md">
@@ -37,16 +38,12 @@ const Filters = ({ filterData, selectedFilters, onFilterChange, openCategory, se
             className="flex justify-between items-center bg-gray-200 p-2 rounded cursor-pointer"
             onClick={() => toggleCategory(filter.category)}
           >
-            {/* Titre de la catégorie */}
             <h3 className="text-lg font-bold">{filter.category}</h3>
-
-            {/* Signe + ou - selon l'état d'ouverture */}
             <span className="text-xl">
               {openCategories[filter.category] ? "−" : "+"}
             </span>
           </div>
 
-          {/* Si le filtre a des sous-catégories à plusieurs niveaux, et la catégorie est ouverte */}
           {openCategories[filter.category] && (
             <div className="ml-4 mt-2">
               {filter.category === "Console" ? (
@@ -70,7 +67,6 @@ const Filters = ({ filterData, selectedFilters, onFilterChange, openCategory, se
                   </div>
                 ))
               ) : (
-                // Pour les catégories sans sous-sous-catégories
                 filter.subcategories.map((subcategory) => (
                   <div key={subcategory} className="mt-2 ml-4">
                     <label className="inline-flex items-center">
@@ -111,8 +107,8 @@ Filters.propTypes = {
   ).isRequired,
   selectedFilters: PropTypes.arrayOf(PropTypes.string).isRequired,
   onFilterChange: PropTypes.func.isRequired,
-  openCategory: PropTypes.string, // Nouvelle prop pour la catégorie à ouvrir
-  setOpenCategory: PropTypes.func, // Nouvelle prop pour changer la catégorie ouverte
+  openCategory: PropTypes.string,
+  setOpenCategory: PropTypes.func, // Correction ici pour utiliser setOpenCategory
 };
 
 export default Filters;
