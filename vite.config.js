@@ -5,9 +5,6 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   base: '/indenum/',
-  server:{
-    open: true,
-  },
   resolve: {
     extensions: ['.js', '.jsx'],  // Ajoute les extensions à reconnaître
   },
