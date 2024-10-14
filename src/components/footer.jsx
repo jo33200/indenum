@@ -4,7 +4,7 @@ const Footer = () => {
 
     return (   
 
-        <footer className=" w-full h-auto text-white flex flex-col justify-start items-start gap-10 bg-gradient-to-r from-[#7A6F6F] to-[#583C3C] py-5 px-1">
+        <footer className=" w-full h-auto text-white flex flex-col lg:flex-row justify-start items-start gap-10 bg-gradient-to-r from-[#7A6F6F] to-[#583C3C] py-5 px-1">
             
             <div className="container w-36 text-left">
                 <img className='bg-contain' src={Logo} alt="Indenum" />
