@@ -2,8 +2,8 @@ import PropTypes from "prop-types";
 
 const CardAD = ({ title, description, price, image, url }) => {
   return (
-    <div className="max-w-sm rounded overflow-hidden shadow-lg bg-white py-4 border-solid">
-      <img className="w-full rounded-t-lg" src={image} alt={title} />
+    <div className="max-w-sm rounded flex flex-col items-center justify-between overflow-hidden shadow-lg bg-white py-4 border-solid">
+      <img className="w-full h-60 rounded-t-lg" src={image} alt={title} />
       <div className="px-6 py-4">
         <div className="font-bold text-xl mb-2">{title}</div>
         <p className="text-gray-700 text-base">{description}</p>
@@ -63,15 +63,17 @@ const ListAd = ({ adsData, selectedFilters }) => {
   const filteredAds = filterAds(adsData);
 
   return (
-    <div className="ads-list">
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6"> {/* Utilise un grid layout */}
       {filteredAds.length > 0 ? (
         filteredAds.map((ad) => (
-          <div key={ad.title} className="ad-card">
-            <img src={ad.image} alt={ad.title} />
-            <h3>{ad.title}</h3>
-            <p>{ad.description}</p>
-            <p>{ad.price}</p>
-          </div>
+          <CardAD
+            key={ad.title} 
+            title={ad.title}
+            description={ad.description}
+            price={ad.price}
+            image={ad.image}
+            url={ad.url}
+          />
         ))
       ) : (
         <p>Aucune annonce ne correspond aux filtres sélectionnés.</p>
