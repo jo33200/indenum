@@ -31,7 +31,7 @@ const Filters = ({ filterData, selectedFilters, onFilterChange, openCategory, se
   };
 
   return (
-    <div className="w-auto md:w-60 mb-4 flex flex-col w-full bg-gray-100 p-4 rounded-md shadow-md">
+    <div className="md:w-60 mb-4 flex flex-col w-full bg-gray-100 p-4 rounded-md shadow-md">
       {filterData.map((filter) => (
         <div key={filter.category} className="mb-2">
           <div
