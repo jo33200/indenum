@@ -72,8 +72,8 @@ const Ad = () => {
   }
 
   return (
-    <div className='container mx-auto p-4 flex flex-col items-center gap-5'>
-      <div className='w-72 p-2'>
+    <div className='mx-auto md:mx-0 p-4 flex flex-col md:flex-row items-center md:items-start gap-5 md:gap-auto md:justify-center'>
+      <div>
         <Filters
           filterData={filterData}
           selectedFilters={selectedFilters}
