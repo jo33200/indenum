@@ -7,7 +7,6 @@ export default {
   theme: {
     extend: {
     fontFamily: {
-      glazkrak: ['GlazKrak', 'sans-serif'],
       openSans: ['Open Sans', 'sans-serif'],
     },
     colors:{
