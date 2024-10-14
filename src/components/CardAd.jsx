@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 
 const CardAD = ({ title, description, price, image, url }) => {
   return (
-    <div className="max-w-sm rounded overflow-hidden shadow-lg bg-white py-4">
+    <div className="max-w-sm rounded overflow-hidden shadow-lg bg-white py-4 border-solid">
       <img className="w-full rounded-t-lg" src={image} alt={title} />
       <div className="px-6 py-4">
         <div className="font-bold text-xl mb-2">{title}</div>

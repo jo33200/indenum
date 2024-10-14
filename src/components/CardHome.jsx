@@ -5,6 +5,7 @@ import Casse from '../assets/img/casse.jpg';
 import Proximite from '../assets/img/proximite.jpg';
 import Pieces from '../assets/img/pièces.jpg';
 import Contact from '../assets/img/contact.jpg';
+import Manette from '../assets/img/manette.jpg';
 
 const CardList = () => {
   // Tableau de données
@@ -26,6 +27,12 @@ const CardList = () => {
       image: Proximite,
       subtitle: 'En savoir plus',
       link : '/contact'
+    },
+    {
+      title: 'Nos Annonces en ligne',
+      image: Manette,
+      subtitle: 'Voir catalogue',
+      link : '/ad',
     },
     {
         title: 'Service pièces détachées',
@@ -73,8 +80,8 @@ const CardList = () => {
 
   // Retourne la liste des cartes
   return (
-    <div>
-      <div className="flex flex-col justify-center items-center gap-6 p-4">
+    <div className='flex justify-center'>
+      <div className="max-w-screen-lg grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-10 pb-10 lg:pb-[60px]">
         {cardData.map((card, index) => (
           <Card key={index} title={card.title} image={card.image} subtitle={card.subtitle} link={card.link} filter={card.filter} />
         ))}
