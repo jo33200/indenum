@@ -1,8 +1,8 @@
-import ListAd from '../../components/CardAd';
-import Filters from '../../components/filters';
-import { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
-import adsDataJson from '../../data/ad.json';
+import ListAd from "../../components/CardAd";
+import Filters from "../../components/filters";
+import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
+import adsDataJson from "../../data/ad.json";
 
 const Ad = () => {
   const location = useLocation();
@@ -15,7 +15,7 @@ const Ad = () => {
   // Récupération des paramètres de l'URL et filtrage
   useEffect(() => {
     const params = new URLSearchParams(location.search);
-    const filter = params.get('filter');
+    const filter = params.get("filter");
     console.log("Current URL filter:", filter); // Vérification du filtre récupéré dans l'URL
     window.scrollTo(0, 0); // Remonter en haut de la page
 
@@ -48,8 +48,14 @@ const Ad = () => {
     },
     {
       category: "Pièces détachées",
-      subcategories: ["Ecran", "Batterie", "Connecteur de charge", "Vitre arrière", "autres"],
-    }
+      subcategories: [
+        "Ecran",
+        "Batterie",
+        "Connecteur de charge",
+        "Vitre arrière",
+        "autres",
+      ],
+    },
   ];
 
   // Gestion des filtres
@@ -57,7 +63,7 @@ const Ad = () => {
     setSelectedFilters((prevFilters) =>
       prevFilters.includes(subcategory)
         ? prevFilters.filter((item) => item !== subcategory)
-        : [...prevFilters, subcategory]
+        : [...prevFilters, subcategory],
     );
   };
 
@@ -72,17 +78,21 @@ const Ad = () => {
   }
 
   return (
-    <div className='mx-auto md:mx-0 p-4 flex flex-col md:flex-row items-center md:items-start gap-5 md:gap-auto md:justify-center'>
-      <div>
-        <Filters
-          filterData={filterData}
-          selectedFilters={selectedFilters}
-          onFilterChange={handleFilterChange}
-          openCategory={openCategory} // Passer la catégorie à ouvrir
-          setOpenCategory={setOpenCategory} // Fonction pour changer la catégorie ouverte
-        />
+    <div className="flex w-full flex-col gap-10 py-10">
+      <h2 className="text-center text-2xl font-bold">Petites annonces</h2>
+      <div className="md:gap-auto flex w-full flex-col items-center gap-5 md:flex-row md:items-start md:justify-around">
+        <div className="w-full">
+          <Filters
+            filterData={filterData}
+            selectedFilters={selectedFilters}
+            onFilterChange={handleFilterChange}
+            openCategory={openCategory} // Passer la catégorie à ouvrir
+            setOpenCategory={setOpenCategory} // Fonction pour changer la catégorie ouverte
+          />
+        </div>
+        <ListAd adsData={adsData} selectedFilters={selectedFilters} />{" "}
+        {/* Passer les annonces ici */}
       </div>
-      <ListAd adsData={adsData} selectedFilters={selectedFilters} /> {/* Passer les annonces ici */}
     </div>
   );
 };

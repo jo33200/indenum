@@ -8,7 +8,7 @@ const ContactInfo = ({ isFooter = false }) => (
 
     <nav className="h-auto w-auto">
       <ul
-        className={`flex flex-col ${isFooter ? "gap-1 items-start justify-start text-left" : "items-center justify-center gap-2 text-center"} `}
+        className={`flex flex-col ${isFooter ? "items-start justify-start gap-1 text-left" : "items-center justify-center gap-2 text-center"} `}
       >
         {isFooter && <li className="font-bold">Contact</li>}
         <li>

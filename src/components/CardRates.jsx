@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 
 const Card = ({ title, description, category, price }) => {
   return (
-    <div className="bg-white shadow-lg rounded-lg p-4">
+    <div className="rounded-lg bg-white p-4 shadow-lg">
       <h2 className="text-xl font-bold">{title}</h2>
       <p className="text-gray-700">{description}</p>
       <span className="text-sm text-gray-500">{category}</span>
@@ -12,10 +12,10 @@ const Card = ({ title, description, category, price }) => {
 };
 
 Card.propTypes = {
-    title: PropTypes.string.isRequired,
-    description: PropTypes.string.isRequired,
-    category: PropTypes.string.isRequired,
-    price: PropTypes.string.isRequired,
-  };
+  title: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  category: PropTypes.string.isRequired,
+  price: PropTypes.string.isRequired,
+};
 
 export default Card;

@@ -2,12 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @font-face {
-  font-family: 'Open Sans', sans-serif;
-  src: url('./assets/fonts/open-sans/open-sans.woff2') format('woff2'),
-       url('./assets/fonts/open-sans/open-sans.woff') format('woff'),
-       url('./assets/fonts/open-sans/open-sans.ttf') format('truetype');
+  font-family: "Open Sans", sans-serif;
+  src:
+    url("./assets/fonts/open-sans/open-sans.woff2") format("woff2"),
+    url("./assets/fonts/open-sans/open-sans.woff") format("woff"),
+    url("./assets/fonts/open-sans/open-sans.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }

@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
 const slogans = [
   {
@@ -38,18 +38,18 @@ const Carousel = () => {
   }, []);
 
   return (
-    <div className="relative w-full h-40 flex items-center justify-center">
+    <div className="relative flex h-40 w-full items-center justify-center">
       {/* Slogans */}
       {slogans.map((slogan, index) => (
         <p
           key={index}
-          className={`absolute text-white text-center font-openSans transition-opacity duration-1000 ease-in-out ${
-            index === currentIndex ? 'opacity-100' : 'opacity-0'
+          className={`absolute text-center font-openSans text-white transition-opacity duration-1000 ease-in-out ${
+            index === currentIndex ? "opacity-100" : "opacity-0"
           }`}
           style={{
-            fontSize: '26px',
-            width: '100%',
-            padding: '0 20px',
+            fontSize: "26px",
+            width: "100%",
+            padding: "0 20px",
           }}
         >
           {slogan.text}
