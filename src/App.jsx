@@ -16,7 +16,7 @@ import Rates from "./pages/rates/rates";
 function App() {
   return (
     <Router>
-      <div className="m-0 h-auto w-full text-center">
+      <div className="m-0 flex h-auto w-full flex-col items-center text-center">
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
