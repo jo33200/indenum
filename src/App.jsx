@@ -1,21 +1,22 @@
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
 
-import './App.css'
-import Header from './components/Header'
-import Footer from './components/Footer' 
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
-
-import Home from './pages/home/home'
-import Ad from './pages/ad/ad'
-import Quote from './pages/quote/quote'
-import Contact from './pages/contact/contact'
-import Rates from './pages/rates/rates'
+import Home from "./pages/home/home";
+import Ad from "./pages/ad/ad";
+import Quote from "./pages/quote/quote";
+import Contact from "./pages/contact/contact";
+import Rates from "./pages/rates/rates";
 
 function App() {
-  
-
   return (
     <Router>
-      <div>
+      <div className="m-0 h-auto w-full text-center">
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
@@ -28,7 +29,7 @@ function App() {
         <Footer />
       </div>
     </Router>
-  )
+  );
 }
 
-export default App
+export default App;
