@@ -37,7 +37,7 @@ const Filters = ({
   };
 
   return (
-    <div className="mb-4 flex w-full flex-row justify-between rounded-md bg-gray-100 p-4 shadow-md md:w-60 md:flex-col">
+    <div className="mb-4 flex w-full flex-col justify-between rounded-md bg-gray-100 p-4 shadow-md">
       {filterData.map((filter) => (
         <div key={filter.category} className="mb-2">
           <div
