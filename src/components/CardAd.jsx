@@ -2,19 +2,21 @@ import PropTypes from "prop-types";
 
 const CardAD = ({ title, description, price, image, url }) => {
   return (
-    <div className="flex max-w-sm flex-col items-center justify-between rounded border-solid bg-white pb-5 shadow-lg">
-      <img className="h-60 w-full rounded-t-lg" src={image} alt={title} />
-      <div className="px-6 py-4">
-        <div className="mb-2 text-xl font-bold">{title}</div>
-        <p className="text-base text-gray-700">{description}</p>
+    <div className="flex w-40 h-80 max-w-sm flex-col items-center justify-between rounded border-solid bg-white pb-2 shadow-lg">
+      <div className="h-40 w-full">
+        <img className="object-fill w-full h-full rounded-t-lg" src={image} alt={title} />
+      </div>
+      <div className="md:px-6 md:py-4">
+        <h3 className="md:mb-2 text-base md:text-xl font-bold line-clamp-1">{title}</h3>
+        <p className="text-xs md:text-base text-gray-700 line-clamp-2">{description}</p>
         <p className="mt-2 font-semibold">{price}</p>
       </div>
-      <div className="px-6 pb-2 pt-4">
+      <div className="px:1 pb:0 pt:1 md:px-6 md:pb-2 md:pt-4">
         <a
           href={url}
           target="_blank"
           rel="noopener noreferrer"
-          className="rounded bg-name-orange px-4 py-2 font-bold text-white hover:bg-blue-700"
+          className="rounded bg-name-orange md:px-4 md:py-2 font-bold text-white text-xs hover:bg-blue-700"
         >
           Voir annonce
         </a>
@@ -66,7 +68,7 @@ const ListAd = ({ adsData, selectedFilters }) => {
   const filteredAds = filterAds(adsData);
 
   return (
-    <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 xl:grid-cols-3">
+    <div className="grid grid-cols-2 gap-8 lg:grid-cols-2 xl:grid-cols-3">
       {" "}
       {/* Utilise un grid layout */}
       {filteredAds.length > 0 ? (
