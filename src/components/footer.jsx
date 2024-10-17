@@ -3,7 +3,7 @@ import ContactInfo from "./ContactInfo";
 
 const Footer = () => {
   return (
-    <footer className="flex h-auto w-full flex-col items-start justify-start gap-10 bg-gradient-to-r from-[#7A6F6F] to-[#583C3C] px-2 py-5 text-white sm:items-center">
+    <footer className="flex h-auto w-full flex-col items-start justify-start gap-10 bg-gradient-to-r from-[#7A6F6F] to-[#583C3C] px-2 pt-5 pb-16 text-white sm:items-center">
       <div className="container w-36 text-left">
         <img className="bg-contain" src={Logo} alt="Indenum" />
       </div>

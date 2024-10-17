@@ -3,6 +3,7 @@ import Filters from "../../components/filters";
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import adsDataJson from "../../data/ad.json";
+import ScrollToTopButton from "../../components/ScrollToTopButton.jsx";
 
 const Ad = () => {
   const location = useLocation();
@@ -93,6 +94,7 @@ const Ad = () => {
         <ListAd adsData={adsData} selectedFilters={selectedFilters} />{" "}
         {/* Passer les annonces ici */}
       </div>
+      <ScrollToTopButton />
     </div>
   );
 };

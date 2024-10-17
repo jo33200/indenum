@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Card from "../../components/CardRates";
+import ScrollToTopButton from "../../components/ScrollToTopButton";
 
 // Exemple de données de cartes
 const cardData = [
@@ -159,6 +160,7 @@ const CardFilterPage = () => {
           <p>Aucune carte ne correspond aux filtres sélectionnés.</p>
         )}
       </div>
+      <ScrollToTopButton />
     </div>
   );
 };
