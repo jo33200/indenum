@@ -10,7 +10,7 @@ const Ad = () => {
   const [openCategory, setOpenCategory] = useState("");
   const [adsData, setAdsData] = useState([]); // État pour stocker les annonces
   const [loading, setLoading] = useState(true); // Pour gérer l'état de chargement
-  const [error, setError] = useState(null); // Pour gérer les erreurs
+  const [error] = useState(null); // Pour gérer les erreurs
 
   // Récupération des paramètres de l'URL et filtrage
   useEffect(() => {
@@ -81,7 +81,7 @@ const Ad = () => {
     <div className="flex w-full flex-col gap-10 py-10">
       <h2 className="text-center text-2xl font-bold">Petites annonces</h2>
       <div className="md:gap-auto flex w-full flex-col items-center gap-5 md:flex-row md:items-start md:justify-around">
-        <div className="w-full">
+        <div>
           <Filters
             filterData={filterData}
             selectedFilters={selectedFilters}
