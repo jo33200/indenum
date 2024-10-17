@@ -37,21 +37,26 @@ const Filters = ({
   };
 
   return (
-    <div className="mb-4 flex w-full flex-col justify-between rounded-md bg-gray-100 p-4 shadow-md">
+    <div className="mb-4 flex w-full justify-around bg-gray-100 p-1 sm:flex-col sm:justify-between sm:rounded-md sm:p-4 sm:shadow-md">
       {filterData.map((filter) => (
         <div key={filter.category} className="mb-2">
           <div
-            className="flex cursor-pointer items-center justify-between rounded bg-gray-200 p-2"
+            className="flex cursor-pointer items-center justify-between gap-1 rounded sm:bg-gray-200 sm:p-2"
             onClick={() => toggleCategory(filter.category)}
           >
             <h3 className="text-lg font-bold">{filter.category}</h3>
             <span className="text-xl">
-              {openCategories[filter.category] ? "−" : "+"}
+              <span className="block text-xs sm:hidden">
+                {openCategories[filter.category] ? "▲" : "▼"}
+              </span>
+              <span className="hidden sm:block">
+                {openCategories[filter.category] ? "−" : "+"}
+              </span>
             </span>
           </div>
 
           {openCategories[filter.category] && (
-            <div className="ml-4 mt-2">
+            <div className="text-left">
               {filter.category === "Console"
                 ? filter.subcategories.map((subcat) => (
                     <div key={subcat.subcategory} className="ml-4 bg-gray-100">
@@ -60,7 +65,7 @@ const Filters = ({
                       </h4>
                       {subcat.subSubcategories.map((subSubcat) => (
                         <div key={subSubcat} className="ml-6 mt-2">
-                          <label className="inline-flex items-center">
+                          <label className="inline-flex items-start">
                             <input
                               type="checkbox"
                               value={subSubcat}
@@ -76,7 +81,7 @@ const Filters = ({
                   ))
                 : filter.subcategories.map((subcategory) => (
                     <div key={subcategory} className="ml-4 mt-2">
-                      <label className="inline-flex items-center">
+                      <label className="inline-flex items-center justify-start">
                         <input
                           type="checkbox"
                           value={subcategory}
