@@ -8,7 +8,7 @@ const Header = () => {
     return `${
       location.pathname === path ? "scale-125" : ""
     } transition-transform duration-200 hover:scale-110 font-semibold text-white`;
-  }
+  };
 
   return (
     <header className="h-auto w-full bg-gradient-to-r from-[#7A6F6F] to-[#583C3C] pt-5">
@@ -29,7 +29,7 @@ const Header = () => {
 
         {/* Navigation */}
         <nav className="mt-2 w-full">
-          <ul className="flex h-10 w-full items-center justify-center gap-3 bg-neutral-700 text-sm sm:gap-6 sm:text-base md:text-lg lg:gap-14">
+          <ul className="flex h-10 w-full px-2 items-center justify-between lg:justify-around bg-neutral-700 text-sm sm:text-base md:text-xl lg:gap-14">
             <li className={getLinkClass("/")}>
               <Link to="/">Accueil</Link>
             </li>
