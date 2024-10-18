@@ -38,11 +38,11 @@ const Filters = ({
   };
 
   return (
-    <div className="flex w-full sm:justify-around sm:bg-gray-100 md:flex-col md:justify-between md:rounded-md md:p-4 md:shadow-md">
+    <div className="flex w-full md:border-solid md:border-[0.5px] md:border-zinc-200 md:flex-col md:justify-between md:rounded-md md:p-4 ">
       {/* Affichage du bouton "Filtres" pour les petits écrans */}
-      <div className="w-1/2 sm:hidden">
+      <div className="w-[250px] sm:1/5 md:hidden">
         <div
-          className="flex cursor-pointer items-center justify-between bg-gray-200 rounded-t p-2"
+          className="flex cursor-pointer items-center justify-between border-solid border-[1px] border-zinc-200 rounded-t p-2"
           onClick={() => setShowAllFilters(!showAllFilters)} // Ouvrir/fermer tous les filtres
         >
           <h3 className="text-lg font-bold">Filtres</h3>
@@ -53,11 +53,11 @@ const Filters = ({
 
         {/* Afficher toutes les catégories lorsque "Filtres" est ouvert */}
         {showAllFilters && (
-          <div className="">
+          <div className="border-solid border-[0.5px] border-zinc-100">
             {filterData.map((filter) => (
               <div key={filter.category} className="">
                 <div
-                  className="flex cursor-pointer items-center justify-between gap-1 bg-gray-100 p-2"
+                  className="flex cursor-pointer items-center justify-between border-solid border-[0.5px] border-zinc-200 p-2"
                   onClick={() => toggleCategory(filter.category)}
                 >
                   <h3 className="text-sm font-bold">{filter.category}</h3>
@@ -90,23 +90,23 @@ const Filters = ({
       </div>
 
       {/* Affichage des catégories pour les écrans plus grands */}
-      <div className="hidden sm:block">
+      <div className="hidden md:block">
         {filterData.map((filter) => (
           <div key={filter.category} className="mb-2">
             <div
-              className="flex cursor-pointer items-center justify-between gap-1 rounded bg-gray-200 p-2"
+              className="flex cursor-pointer items-center justify-between gap-1 rounded bg-white p-2 md:border-solid md:border-[0.5px] md:border-zinc-200"
               onClick={() => toggleCategory(filter.category)}
             >
-              <h3 className="text-lg font-bold">{filter.category}</h3>
-              <span className="text-xl">
+              <h3 className="text-base font-bold text-gray-600">{filter.category}</h3>
+              <span className="text-base font-semibold text-gray-600">
                 {openCategories[filter.category] ? "−" : "+"}
               </span>
             </div>
             {openCategories[filter.category] && (
               <div className="ml-4 mt-2">
                 {filter.subcategories.map((subcategory) => (
-                  <div key={subcategory} className="ml-4 mt-2">
-                    <label className="inline-flex items-start">
+                  <div key={subcategory} className="text-left">
+                    <label className="inline-flex items-center">
                       <input
                         type="checkbox"
                         value={subcategory}
