@@ -1,9 +1,9 @@
+import { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 import ListAd from "../../components/CardAd";
 import Filters from "../../components/filters";
-import { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
-import adsDataJson from "../../data/ad.json";
 import ScrollToTopButton from "../../components/ScrollToTopButton.jsx";
+import adsDataJson from "../../data/ad.json";
 
 const Ad = () => {
   const location = useLocation();
@@ -79,21 +79,18 @@ const Ad = () => {
   }
 
   return (
-    <div className="flex w-full flex-col gap-10 py-10">
-      <h2 className="text-center text-2xl font-bold">Petites annonces</h2>
-      <div className="md:gap-auto flex w-full flex-col items-center gap-5 md:flex-row md:items-start md:justify-around">
-        <div className="w-full sm:w-80">
-          <Filters
-            filterData={filterData}
-            selectedFilters={selectedFilters}
-            onFilterChange={handleFilterChange}
-            openCategory={openCategory} // Passer la catégorie à ouvrir
-            setOpenCategory={setOpenCategory} // Fonction pour changer la catégorie ouverte
-          />
-        </div>
-        <ListAd adsData={adsData} selectedFilters={selectedFilters} />{" "}
-        {/* Passer les annonces ici */}
+    <div className="my-5 flex w-full flex-col items-start gap-5 px-2 sm:w-full md:flex-row md:items-start md:justify-around">
+      <div className="w-full md:w-80">
+        <Filters
+          filterData={filterData}
+          selectedFilters={selectedFilters}
+          onFilterChange={handleFilterChange}
+          openCategory={openCategory} // Passer la catégorie à ouvrir
+          setOpenCategory={setOpenCategory} // Fonction pour changer la catégorie ouverte
+        />
       </div>
+      <ListAd adsData={adsData} selectedFilters={selectedFilters} />{" "}
+      {/* Passer les annonces ici */}
       <ScrollToTopButton />
     </div>
   );
