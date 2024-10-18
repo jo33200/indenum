@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 
 const CardAD = ({ title, description, price, image, url }) => {
   return (
-    <div className="flex h-80 w-40 max-w-sm flex-col items-start justify-between rounded border-solid bg-white pb-4 shadow-lg">
+    <div className="flex h-80 w-full flex-col items-start justify-between rounded border-solid bg-white shadow-lg">
       <div className="h-40 w-full">
         <img
           className="h-full w-full rounded-t-lg object-fill"
@@ -19,7 +19,7 @@ const CardAD = ({ title, description, price, image, url }) => {
         </p>
         <p className="font-semibold">{price}</p>
       </div>
-      <div className="px-2 pb-0 pt-1">
+      <div className="px-2 pb-3">
         <a
           href={url}
           target="_blank"
@@ -76,7 +76,7 @@ const ListAd = ({ adsData, selectedFilters }) => {
   const filteredAds = filterAds(adsData);
 
   return (
-    <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 xl:grid-cols-4">
+    <div className="w-full grid gap-5 sm:gap-3 grid-cols-2 justify-between sm:grid-cols-3 lg:gap-4 xl:grid-cols-4 2xl:grid-cols-5">
       {" "}
       {/* Utilise un grid layout */}
       {filteredAds.length > 0 ? (
