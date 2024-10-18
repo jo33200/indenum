@@ -1,7 +1,15 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import Logo from "../assets/img/Indenum.png";
 
 const Header = () => {
+  const location = useLocation();
+
+  const getLinkClass = (path) => {
+    return `${
+      location.pathname === path ? "scale-125" : ""
+    } transition-transform duration-200 hover:scale-110 font-semibold text-white`;
+  }
+
   return (
     <header className="h-auto w-full bg-gradient-to-r from-[#7A6F6F] to-[#583C3C] pt-5">
       <div className="flex w-full flex-col items-center justify-center gap-2">
@@ -22,45 +30,20 @@ const Header = () => {
         {/* Navigation */}
         <nav className="mt-2 w-full">
           <ul className="flex h-10 w-full items-center justify-center gap-3 bg-neutral-700 text-sm sm:gap-6 sm:text-base md:text-lg lg:gap-14">
-            <li className="transition-transform duration-200 hover:scale-110">
-              <Link
-                to="/"
-                className="font-semibold text-white hover:text-gray-300"
-              >
-                Accueil
-              </Link>
+            <li className={getLinkClass("/")}>
+              <Link to="/">Accueil</Link>
             </li>
-            <li className="transition-transform duration-200 hover:scale-110">
-              <Link
-                to="/rates"
-                className="font-semibold text-white transition-transform duration-200 hover:scale-110 hover:text-gray-300"
-              >
-                Tarifs
-              </Link>
+            <li className={getLinkClass("/rates")}>
+              <Link to="/rates">Tarifs</Link>
             </li>
-            <li className="transition-transform duration-200 hover:scale-110">
-              <Link
-                to="/ad"
-                className="font-semibold text-white transition-transform duration-200 hover:scale-110 hover:text-gray-300"
-              >
-                Annonces
-              </Link>
+            <li className={getLinkClass("/ad")}>
+              <Link to="/ad">Annonces</Link>
             </li>
-            <li className="transition-transform duration-200 hover:scale-110">
-              <Link
-                to="/quote"
-                className="font-semibold text-white transition-transform duration-200 hover:scale-110 hover:text-gray-300"
-              >
-                Devis
-              </Link>
+            <li className={getLinkClass("/quote")}>
+              <Link to="/quote">Devis</Link>
             </li>
-            <li className="transition-transform duration-200 hover:scale-110">
-              <Link
-                to="/contact"
-                className="font-semibold text-white transition-transform duration-200 hover:scale-110 hover:text-gray-300"
-              >
-                Contact
-              </Link>
+            <li className={getLinkClass("/contact")}>
+              <Link to="/contact">Contact</Link>
             </li>
           </ul>
         </nav>
