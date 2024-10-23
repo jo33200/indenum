@@ -17,7 +17,7 @@ const CardAD = ({ title, description, price, image, url }) => {
         <p className="line-clamp-2 text-left text-xs text-gray-700 lg:text-base">
           {description}
         </p>
-        <p className="font-semibold">{price}</p>
+        <p className="font-semibold">{price}€</p>
       </div>
       <div className="px-2 pb-3">
         <a
@@ -36,7 +36,7 @@ const CardAD = ({ title, description, price, image, url }) => {
 CardAD.propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-  price: PropTypes.string.isRequired,
+  price: PropTypes.number.isRequired,
   image: PropTypes.string.isRequired,
   url: PropTypes.string.isRequired,
 };
@@ -102,7 +102,7 @@ ListAd.propTypes = {
     PropTypes.shape({
       title: PropTypes.string.isRequired,
       description: PropTypes.string.isRequired,
-      price: PropTypes.string.isRequired,
+      price: PropTypes.number.isRequired,
       image: PropTypes.string.isRequired,
       url: PropTypes.string.isRequired,
     }),
