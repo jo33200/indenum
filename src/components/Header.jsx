@@ -28,7 +28,7 @@ const Header = () => {
           Service de Réparation pour vos objets électroniques
         </p>
           </div>
-          <ul className="hidden w-96 lg:flex flex-col justify-around items-end text-left text-xl font-semibold text-white">
+          <ul className="hidden w-96 lg:flex flex-col justify-around items-end text-left text-base font-semibold text-white">
             <li>
               <FontAwesomeIcon icon={faEnvelope} className="mr-2"/>
               indenum@outlook.com</li>
