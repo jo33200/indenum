@@ -15,14 +15,10 @@ const Filters = ({
     if (openCategory) {
       console.log("Open category in useEffect:", openCategory);
 
-      setOpenCategories((prev) => {
-        const updatedCategories = {
-          ...prev,
-          [openCategory]: true, // Ouvre la catégorie passée en prop
-        };
-        console.log("Updated openCategories:", updatedCategories);
-        return updatedCategories;
-      });
+      setOpenCategories((prev) => ({
+        ...prev,
+        [openCategory]: true, // Ouvre la catégorie passée en prop
+      }));
     }
   }, [openCategory]);
 
@@ -37,6 +33,10 @@ const Filters = ({
     });
   };
 
+  if (!filterData || !Array.isArray(filterData)) {
+    return <div>Pas de filtres disponibles</div>;
+  }
+
   return (
     <div className="flex w-full md:flex-col md:justify-between md:rounded-md md:border-[0.5px] md:border-solid md:border-zinc-200 md:p-4">
       {/* Affichage du bouton "Filtres" pour les petits écrans */}
@@ -47,7 +47,7 @@ const Filters = ({
         >
           <h3 className="text-lg font-bold">Filtres</h3>
           <span className="text-2xl font-bold text-gray-700">
-            {showAllFilters ? "-" : "+"} {/* Icone pour ouvrir/fermer */}
+            {showAllFilters ? "-" : "+"} {/* Icône pour ouvrir/fermer */}
           </span>
         </div>
 
@@ -55,7 +55,7 @@ const Filters = ({
         {showAllFilters && (
           <div className="border-[0.5px] border-solid border-zinc-100">
             {filterData.map((filter) => (
-              <div key={filter.category} className="">
+              <div key={filter.category}>
                 <div
                   className="flex cursor-pointer items-center justify-between border-[0.5px] border-solid border-zinc-200 p-2"
                   onClick={() => toggleCategory(filter.category)}
@@ -67,20 +67,57 @@ const Filters = ({
                 </div>
                 {openCategories[filter.category] && (
                   <div className="text-left">
-                    {filter.subcategories.map((subcategory) => (
-                      <div key={subcategory} className="ml-4 mt-2">
-                        <label className="inline-flex items-start">
-                          <input
-                            type="checkbox"
-                            value={subcategory}
-                            checked={selectedFilters.includes(subcategory)}
-                            onChange={(e) => onFilterChange(e.target.value)}
-                            className="form-checkbox"
-                          />
-                          <span className="ml-2">{subcategory}</span>
-                        </label>
-                      </div>
-                    ))}
+                    {filter.subcategories.map((subcategory) => {
+                      if (typeof subcategory === "string") {
+                        return (
+                          <div key={subcategory} className="ml-4 mt-2">
+                            <label className="inline-flex items-start">
+                              <input
+                                type="checkbox"
+                                value={subcategory}
+                                checked={selectedFilters.includes(subcategory)}
+                                onChange={(e) => onFilterChange(e.target.value)}
+                                className="form-checkbox"
+                              />
+                              <span className="ml-2">{subcategory}</span>
+                            </label>
+                          </div>
+                        );
+                      } else if (typeof subcategory === "object" && subcategory.subcategory) {
+                        return (
+                          <div key={subcategory.subcategory} className="mb-2">
+                            <div
+                              className="flex cursor-pointer items-center justify-between font-semibold text-gray-700"
+                              onClick={() => toggleCategory(subcategory.subcategory)}
+                            >
+                              {subcategory.subcategory}
+                              <span className="text-lg">
+                                {openCategories[subcategory.subcategory] ? "−" : "+"}
+                              </span>
+                            </div>
+                            {openCategories[subcategory.subcategory] && (
+                              <div className="ml-4 mt-1">
+                                {subcategory.subSubcategories.map((subSubcat) => (
+                                  <div key={subSubcat} className="mt-1 flex items-center">
+                                    <label className="inline-flex items-center">
+                                      <input
+                                        type="checkbox"
+                                        value={subSubcat}
+                                        checked={selectedFilters.includes(subSubcat)}
+                                        onChange={(e) => onFilterChange(e.target.value)}
+                                        className="form-checkbox"
+                                      />
+                                      <span className="ml-2">{subSubcat}</span>
+                                    </label>
+                                  </div>
+                                ))}
+                              </div>
+                            )}
+                          </div>
+                        );
+                      }
+                      return null;
+                    })}
                   </div>
                 )}
               </div>
@@ -104,20 +141,57 @@ const Filters = ({
             </div>
             {openCategories[filter.category] && (
               <div className="ml-4 mt-2">
-                {filter.subcategories.map((subcategory) => (
-                  <div key={subcategory} className="text-left">
-                    <label className="inline-flex items-center">
-                      <input
-                        type="checkbox"
-                        value={subcategory}
-                        checked={selectedFilters.includes(subcategory)}
-                        onChange={(e) => onFilterChange(e.target.value)}
-                        className="form-checkbox"
-                      />
-                      <span className="ml-2">{subcategory}</span>
-                    </label>
-                  </div>
-                ))}
+                {filter.subcategories.map((subcategory) => {
+                  if (typeof subcategory === "string") {
+                    return (
+                      <div key={subcategory} className="text-left">
+                        <label className="inline-flex items-center">
+                          <input
+                            type="checkbox"
+                            value={subcategory}
+                            checked={selectedFilters.includes(subcategory)}
+                            onChange={(e) => onFilterChange(e.target.value)}
+                            className="form-checkbox"
+                          />
+                          <span className="ml-2">{subcategory}</span>
+                        </label>
+                      </div>
+                    );
+                  } else if (typeof subcategory === "object" && subcategory.subcategory) {
+                    return (
+                      <div key={subcategory.subcategory} className="mb-2">
+                        <div
+                          className="flex cursor-pointer items-center justify-between font-semibold text-gray-700"
+                          onClick={() => toggleCategory(subcategory.subcategory)}
+                        >
+                          {subcategory.subcategory}
+                          <span className="text-lg">
+                            {openCategories[subcategory.subcategory] ? "−" : "+"}
+                          </span>
+                        </div>
+                        {openCategories[subcategory.subcategory] && (
+                          <div className="ml-4 mt-1">
+                            {subcategory.subSubcategories.map((subSubcat) => (
+                              <div key={subSubcat} className="text-left">
+                                <label className="inline-flex items-center">
+                                  <input
+                                    type="checkbox"
+                                    value={subSubcat}
+                                    checked={selectedFilters.includes(subSubcat)}
+                                    onChange={(e) => onFilterChange(e.target.value)}
+                                    className="form-checkbox"
+                                  />
+                                  <span className="ml-2">{subSubcat}</span>
+                                </label>
+                              </div>
+                            ))}
+                          </div>
+                        )}
+                      </div>
+                    );
+                  }
+                  return null;
+                })}
               </div>
             )}
           </div>
@@ -137,10 +211,10 @@ Filters.propTypes = {
           PropTypes.shape({
             subcategory: PropTypes.string.isRequired,
             subSubcategories: PropTypes.arrayOf(PropTypes.string),
-          }),
+          })
         ),
       ]).isRequired,
-    }).isRequired,
+    })
   ).isRequired,
   selectedFilters: PropTypes.arrayOf(PropTypes.string).isRequired,
   onFilterChange: PropTypes.func.isRequired,

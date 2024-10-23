@@ -8,7 +8,7 @@
       }
     ],
     "description": " Lite",
-    "prix": "25"
+    "price": 25
   },
 
   {
@@ -20,7 +20,7 @@
       }
     ],
     "description": "",
-    "prix": "30"
+    "price": "30"
   },
 
   {
@@ -32,7 +32,7 @@
       }
     ],
     "description": "",
-    "prix": "50"
+    "price": 50
   },
 
   {
@@ -44,7 +44,7 @@
       }
     ],
     "description": "",
-    "prix": "50"
+    "price": "50"
   },
 
   {
@@ -56,7 +56,7 @@
       }
     ],
     "description": "",
-    "prix": "50"
+    "price": "50"
   },
 
   {
@@ -68,7 +68,7 @@
       }
     ],
     "description": "",
-    "prix": "30"
+    "price": 30
   },
 
   {
@@ -80,7 +80,7 @@
       }
     ],
     "description": "",
-    "prix": "40"
+    "price": 40
   },
 
   {
@@ -92,7 +92,7 @@
       }
     ],
     "description": "",
-    "prix": "30"
+    "price": 30
   },
 
   {
@@ -104,7 +104,7 @@
       }
     ],
     "description": "",
-    "prix": "20"
+    "price": 20
   },
 
   {
@@ -116,7 +116,7 @@
       }
     ],
     "description": "",
-    "prix": "45"
+    "price": 45
   },
 
   {
@@ -128,405 +128,398 @@
       }
     ],
     "description": "",
-    "prix": "35"
+    "price": 35
   },
 
   {
     "title": "Puce Contrôleur de Charge M92T36 SwitcLite",
     "categories": "Switch&Lite",
     "description": "",
-    "prix": "55"
+    "price": 55
   },
 
   {
     "title": "Puce Contrôleur de Charge BQ24193 SwitcLite",
     "categories": "Switch&Lite",
     "description": "",
-    "prix": "55"
+    "price": 55
   },
 
   {
     "title": "Puce P13USB HDMI USB",
     "categories": "Switch",
     "description": " ",
-    "prix": "55"
+    "price": 55
   },
 
   {
     "title": "Joystick Noir Joy-Con",
     "categories": "Switch",
     "description": " ",
-    "prix": "15"
+    "price": 15
   },
 
   {
     "title": "Connecteur de charge",
     "categories": "Switch",
     "description": " ",
-    "prix": "50"
+    "price": 50
   },
 
   {
     "title": "Lecteur de Carte microSD",
     "categories": "Switch",
     "description": " ",
-    "prix": "29"
+    "price": 29
   },
 
   {
     "title": "Vitre Tactile Switch 1ère génération (HAC-001)",
     "categories": "Switch",
     "description": "",
-    "prix": "50"
+    "price": 50
   },
 
   {
     "title": "Vitre Tactile  (Tactile 2e Génération)",
     "categories": "Switch",
     "description": "",
-    "prix": "55"
+    "price": 55
   },
 
   {
     "title": "Nappe Bouton L Joy-Con",
     "categories": "Switch",
     "description": " ",
-    "prix": "16"
+    "price": 16
   },
 
   {
     "title": "Nappe SSR Joy-Con Gauche",
     "categories": "Switch",
     "description": " ",
-    "prix": "15"
+    "price": 15
   },
 
   {
     "title": "Nappe SSR Joy-Con Droit",
     "categories": "Switch",
     "description": " ",
-    "prix": "15"
+    "price": 15
   },
 
   {
     "title": "Batterie Joy-Con",
     "categories": "Switch",
     "description": " ",
-    "prix": "17"
+    "price": 17
   },
 
   {
     "title": "Lecteur de Cartouche  (a souder)",
     "categories": "Switch",
     "description": "",
-    "prix": "40"
+    "price": 40
   },
 
   {
     "title": "SlideRail pour Joy-Con G+D",
     "categories": "Switch",
     "description": " ",
-    "prix": "19"
+    "price": 19
   },
 
   {
     "title": "SlideRail G+D Détection Joy-Con",
     "categories": "Switch",
     "description": " ",
-    "prix": "35"
+    "price": 35
   },
 
   {
     "title": "Bouton GauchDroit  Joy-Con",
     "categories": "Switch",
     "description": "",
-    "prix": "15"
+    "price": 15
   },
 
   {
     "title": "Ventilateur Interne",
     "categories": "Switch",
     "description": " ",
-    "prix": "35"
+    "price": 35
   },
 
   {
     "title": "Batterie HAC-003 Nintendo SwitcSwitch Oled",
     "categories": "SwitcOled",
     "description": "",
-    "prix": "45"
+    "price": 45
   },
 
   {
     "title": "Connecteur de Charge  Oled",
     "categories": "Switch Oled",
     "description": "",
-    "prix": "50"
+    "price": 50
   },
 
   {
     "title": "Ventilateur  OLED",
     "categories": "Switch Oled",
     "description": " ",
-    "prix": "35"
+    "price": 35
   },
 
   {
     "title": "Pcb Drift Fix",
     "categories": "PS4",
     "description": " Pour manette PS4 Xbox One",
-    "prix": "15"
+    "price": 15
   },
 
   {
     "title": "Nettoyage potentiomètre (alcool iso+consommable)",
     "categories": "PS4",
     "description": "",
-    "prix": "15"
+    "price": 15
   },
 
   {
     "title": "Module Joystick Manette",
     "categories": "PS4",
     "description": "  PS4 Xbox One",
-    "prix": "20"
+    "price": 20
   },
 
   {
     "title": "Capuchon Joystick Dualshock 4 V1",
     "categories": "PS4",
     "description": "",
-    "prix": "7"
+    "price": 7 
   },
 
   {
     "title": "Capuchon Joystick Dualshock 4 V2 SliPro",
     "categories": "PS4",
     "description": "",
-    "prix": "7"
+    "price": 7  
   },
 
   {
     "title": "Connecteur de Charge ",
     "categories": "PS4",
     "description": "Pour Manette PS4 (V3-JDS030)",
-    "prix": "15"
+    "price": 15
   },
 
   {
     "title": "Connecteur de Charge",
     "categories": "PS4",
     "description": "Pour Manette PS4 (V4-JDS040)",
-    "prix": "15"
+    "price": 15
   },
 
   {
     "title": "Connecteur de Charge",
     "categories": "PS4",
     "description": "Pour Manette PS4 (V5-JDS05055)",
-    "prix": "15"
+    "price": 15
   },
 
   {
     "title": "Connecteur de Charge",
     "categories": "PS4",
     "description": "Pour Manette PS4 (V1-JDS001)",
-    "prix": "15"
+    "price": 15
   },
 
   {
     "title": "Connecteur de Charge",
     "categories": "PS4",
     "description": "Pour Manette PS4 ( V2-JDS011)",
-    "prix": "15"
+    "price": 15
   },
 
   {
     "title": "Nappe Connecteur de Charge",
     "categories": "PS4",
     "description": "Pour Manette PS4 9.5cm 12pi",
-    "prix": "10"
+    "price": 10
   },
 
   {
     "title": "Nappe Connecteur de Charge Manette",
     "categories": "PS4",
     "description": "Pour PS4 9.5cm 14pi",
-    "prix": "10"
+    "price": 10
   },
 
   {
     "title": "",
     "categories": "PS4",
     "description": "Batterie Manette V1 PS4 Fat 1000mAh (LIP1522)",
-    "prix": "15"
+    "price": 15
   },
 
   {
     "title": "",
     "categories": "PS4",
     "description": "Batterie Manette V2 PS4 SliPro 1000mAh (LIP1522)",
-    "prix": "15"
+    "price": 15
   },
 
   {
     "title": "",
     "categories": "PS4",
     "description": "Connecteur HDMI PS4 Fat (CUH-10XX 11XX 12XX)",
-    "prix": "55"
+    "price": 55
   },
 
   {
     "title": "",
     "categories": "PS4",
     "description": "Connecteur HDMI PS4 SliPro",
-    "prix": "60"
+    "price": 60
   },
 
   {
     "title": "",
     "categories": "PS4",
     "description": "Puce HDMI Panasonic PSSliPro sauf CUH-10x11xx",
-    "prix": "60"
+    "price": 60
   },
 
   {
     "title": "",
     "categories": "PS4",
     "description": "Coque Avant Dualshock 4 V1 (JDM-0001020)",
-    "prix": "17"
+    "price": 17
   },
 
   {
     "title": "",
     "categories": "PS4",
     "description": "Coque Arrière Dualshock 4 V1 (JDM-0001020)",
-    "prix": "14"
+    "price": 14
   },
 
   {
     "title": "",
     "categories": "PS4",
     "description": "Coque Avant Dualshock 4 V2 (JDM-040)",
-    "prix": "16"
+    "price": 16
   },
 
   {
     "title": "",
     "categories": "PS4",
     "description": "Coque Arrière Dualshock 4 V2 (JDM-040)",
-    "prix": "14"
+    "price": 14
   },
 
   {
     "title": "",
     "categories": "PS4",
     "description": "Nappe Interne Dualshock 4 V1 (JDM-0001020)",
-    "prix": "20"
+    "price": 20
   },
 
   {
     "title": "",
     "categories": "PS4",
     "description": "Dépoussiérage + pâte thermique PS4 FASlim",
-    "prix": "30"
+    "price": 30
   },
 
   {
     "title": "",
     "categories": "PS4",
     "description": "Dépoussiérage  interne",
-    "prix": "20"
+    "price": 20
   },
 
   {
     "title": "",
     "categories": "",
     "description": "",
-    "prix": "5"
-  },
-
-  {
-    "title": "",
-    "categories": "",
-    "description": "",
-    "prix": ""
+    "price": 5  
   },
 
   {
     "title": "",
     "categories": "PS5",
     "description": "Connecteur de Charge USB-C Manette PS5",
-    "prix": "30"
+    "price": 30
   },
 
   {
     "title": "",
     "categories": "PS5",
     "description": "Coque Complète Blanche Dualsense PS5 (BDM-010)",
-    "prix": "30"
+    "price": 30
   },
 
   {
     "title": "",
     "categories": "PS5",
     "description": "Module Joystick Dualsense PS5 (BDM-010)",
-    "prix": "26"
+    "price": 26
   },
 
   {
     "title": "",
     "categories": "PS5",
     "description": "Module Joystick Analogique 3D PS5",
-    "prix": "26"
+    "price": 26
   },
 
   {
     "title": "",
     "categories": "PS5",
     "description": "Prise Jack Casque PS5",
-    "prix": "28"
+    "price": 28
   },
 
   {
     "title": "",
     "categories": "PS5",
     "description": "Nettoyage potentiomètre (alcool isopropylique)",
-    "prix": "15"
+    "price": 15
   },
 
   {
     "title": "",
     "categories": "PS5",
     "description": "Capuchon Joystick Dualsense PS5 (BDM-010)",
-    "prix": "10"
+    "price": 10
   },
 
   {
     "title": "",
     "categories": "PS5",
     "description": "Batterie manette PS5 Dualsense BDM-010 (LIP1708)",
-    "prix": "20"
+    "price": 20
   },
 
   {
     "title": "",
     "categories": "PS5",
     "description": "Connecteur HDMI PS5",
-    "prix": "70"
+    "price": 70
   },
 
   {
     "title": "",
     "categories": "PS5",
     "description": "Nappe Micro Dualsense V1 PS5",
-    "prix": "20"
+    "price": 20
   },
 
   {
     "title": "",
     "categories": "",
     "description": "",
-    "prix": "40"
+    "price": 40
   }
 ]
