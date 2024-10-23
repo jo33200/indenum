@@ -38,11 +38,11 @@ const Filters = ({
   };
 
   return (
-    <div className="flex w-full md:border-solid md:border-[0.5px] md:border-zinc-200 md:flex-col md:justify-between md:rounded-md md:p-4 ">
+    <div className="flex w-full md:flex-col md:justify-between md:rounded-md md:border-[0.5px] md:border-solid md:border-zinc-200 md:p-4">
       {/* Affichage du bouton "Filtres" pour les petits écrans */}
-      <div className="w-[250px] sm:1/5 md:hidden">
+      <div className="sm:1/5 w-[250px] md:hidden">
         <div
-          className="flex cursor-pointer items-center justify-between border-solid border-[1px] border-zinc-200 rounded-t p-2"
+          className="flex cursor-pointer items-center justify-between rounded-t border-[1px] border-solid border-zinc-200 p-2"
           onClick={() => setShowAllFilters(!showAllFilters)} // Ouvrir/fermer tous les filtres
         >
           <h3 className="text-lg font-bold">Filtres</h3>
@@ -53,11 +53,11 @@ const Filters = ({
 
         {/* Afficher toutes les catégories lorsque "Filtres" est ouvert */}
         {showAllFilters && (
-          <div className="border-solid border-[0.5px] border-zinc-100">
+          <div className="border-[0.5px] border-solid border-zinc-100">
             {filterData.map((filter) => (
               <div key={filter.category} className="">
                 <div
-                  className="flex cursor-pointer items-center justify-between border-solid border-[0.5px] border-zinc-200 p-2"
+                  className="flex cursor-pointer items-center justify-between border-[0.5px] border-solid border-zinc-200 p-2"
                   onClick={() => toggleCategory(filter.category)}
                 >
                   <h3 className="text-sm font-bold">{filter.category}</h3>
@@ -94,11 +94,11 @@ const Filters = ({
         {filterData.map((filter) => (
           <div key={filter.category} className="mb-2">
             <div
-              className="flex text-gray-600 hover:text-black cursor-pointer items-center justify-between gap-1 rounded bg-white p-2 md:border-solid md:border-[0.5px] md:border-zinc-200 hover:bg-zinc-200"
+              className="flex cursor-pointer items-center justify-between gap-1 rounded bg-white p-2 text-gray-600 hover:bg-zinc-200 hover:text-black md:border-[0.5px] md:border-solid md:border-zinc-200"
               onClick={() => toggleCategory(filter.category)}
             >
-              <h3 className="text-base font-bold ">{filter.category}</h3>
-              <span className="text-base font-semibold ">
+              <h3 className="text-base font-bold">{filter.category}</h3>
+              <span className="text-base font-semibold">
                 {openCategories[filter.category] ? "−" : "+"}
               </span>
             </div>

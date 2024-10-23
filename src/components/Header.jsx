@@ -1,5 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import Logo from "../assets/img/Indenum.png";
+import CleTournevis from "../assets/img/cléTournevis.png";
 
 const Header = () => {
   const location = useLocation();
@@ -14,12 +15,21 @@ const Header = () => {
     <header className="h-auto w-full bg-gradient-to-r from-[#7A6F6F] to-[#583C3C] pt-5">
       <div className="flex w-full flex-col items-center justify-center gap-2">
         {/* Logo */}
-        <div>
+        <div className="flex h-auto w-full justify-center">
+          <img
+            src={CleTournevis}
+            alt="Cle et Tournevis"
+            className="h-auto w-12 md:w-16 lg:w-20 xl:w-24"
+          />
           <img
             src={Logo}
             alt="Indenum"
-            className="h-auto w-48 md:w-60 lg:w-72 xl:w-80"
+            className="h-auto w-48 md:w-60 lg:w-72 xl:w-96"
           />
+          <ul className="flex flex-col justify-between text-left text-xl font-semibold text-white">
+            <li>indenum@outlook.com</li>
+            <li>07 66 44 13 37</li>
+          </ul>
         </div>
 
         {/* Slogan */}
@@ -29,7 +39,7 @@ const Header = () => {
 
         {/* Navigation */}
         <nav className="mt-2 w-full">
-          <ul className="flex h-10 w-full px-2 items-center justify-between lg:justify-center bg-neutral-700 text-sm sm:text-base md:text-xl lg:gap-14">
+          <ul className="flex w-full items-center justify-between bg-neutral-700 px-2 py-2 text-sm sm:text-base md:text-xl lg:justify-center lg:gap-14 xl:py-3 xl:text-2xl">
             <li className={getLinkClass("/")}>
               <Link to="/">Accueil</Link>
             </li>

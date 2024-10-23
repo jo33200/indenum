@@ -1,11 +1,11 @@
-import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 import Atelier from "../assets/img/atelier.jpg";
 import Casse from "../assets/img/casse.jpg";
-import Proximite from "../assets/img/proximite.jpg";
-import Pieces from "../assets/img/pièces.jpg";
 import Contact from "../assets/img/contact.jpg";
 import Manette from "../assets/img/manette.jpg";
+import Pieces from "../assets/img/pièces.jpg";
+import Proximite from "../assets/img/proximite.jpg";
 
 const CardList = () => {
   // Tableau de données

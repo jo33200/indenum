@@ -79,7 +79,7 @@ const Ad = () => {
   }
 
   return (
-    <div className="my-5 flex w-full flex-col items-start gap-5 px-2 sm:w-full md:flex-row md:items-start md:justify-around">
+    <div className="my-5 flex h-auto w-full flex-col items-start gap-5 px-2 sm:w-full md:flex-row md:items-start md:justify-around xl:my-32">
       <div className="w-full md:w-80">
         <Filters
           filterData={filterData}
