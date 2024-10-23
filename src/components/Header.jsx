@@ -1,6 +1,9 @@
 import { Link, useLocation } from "react-router-dom";
 import Logo from "../assets/img/Indenum.png";
 import CleTournevis from "../assets/img/cléTournevis.png";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons';
+
 
 const Header = () => {
   const location = useLocation();
@@ -15,27 +18,28 @@ const Header = () => {
     <header className="h-auto w-full bg-gradient-to-r from-[#7A6F6F] to-[#583C3C] pt-5">
       <div className="flex w-full flex-col items-center justify-center gap-2">
         {/* Logo */}
-        <div className="flex h-auto w-full justify-center">
-          <img
-            src={CleTournevis}
-            alt="Cle et Tournevis"
-            className="h-auto w-12 md:w-16 lg:w-20 xl:w-24"
-          />
-          <img
-            src={Logo}
-            alt="Indenum"
-            className="h-auto w-48 md:w-60 lg:w-72 xl:w-96"
-          />
-          <ul className="flex flex-col justify-between text-left text-xl font-semibold text-white">
-            <li>indenum@outlook.com</li>
-            <li>07 66 44 13 37</li>
+        <div className="flex h-auto w-full justify-around">
+          <div className="hidden w-96 lg:flex lg:justify-center">
+            <img src={CleTournevis} alt="Cle et Tournevis" className="h-auto w-12 md:w-16 lg:w-20 xl:w-24"/>
+          </div>
+          <div className="">
+            <img src={Logo} alt="Indenum" className="h-auto w-48 md:w-60 lg:w-72 xl:w-96"/>
+            <p className="container w-full text-xs font-semibold text-white sm:text-sm md:text-base">
+          Service de Réparation pour vos objets électroniques
+        </p>
+          </div>
+          <ul className="hidden w-96 lg:flex flex-col justify-around items-end text-left text-xl font-semibold text-white">
+            <li>
+              <FontAwesomeIcon icon={faEnvelope} className="mr-2"/>
+              indenum@outlook.com</li>
+            <li>
+              <FontAwesomeIcon icon={faPhone} className="mr-2"/>
+              07 66 44 13 37</li>
           </ul>
         </div>
 
         {/* Slogan */}
-        <p className="container w-3/4 text-xs font-semibold text-white sm:text-sm md:text-base">
-          Service de Réparation pour vos objets électroniques
-        </p>
+        
 
         {/* Navigation */}
         <nav className="mt-2 w-full">
