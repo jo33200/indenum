@@ -29,7 +29,7 @@ const Header = () => {
 
         {/* Navigation */}
         <nav className="mt-2 w-full">
-          <ul className="flex h-10 w-full px-2 items-center justify-between lg:justify-around bg-neutral-700 text-sm sm:text-base md:text-xl lg:gap-14">
+          <ul className="flex h-10 w-full px-2 items-center justify-between lg:justify-center bg-neutral-700 text-sm sm:text-base md:text-xl lg:gap-14">
             <li className={getLinkClass("/")}>
               <Link to="/">Accueil</Link>
             </li>
