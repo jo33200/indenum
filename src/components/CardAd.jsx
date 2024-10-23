@@ -2,15 +2,15 @@ import PropTypes from "prop-types";
 
 const CardAD = ({ title, description, price, image, url }) => {
   return (
-    <div className="flex h-80 w-full flex-col items-start justify-between rounded border-solid bg-white shadow-lg">
-      <div className="h-40 w-full">
+    <div className="flex h-80 w-full flex-col items-start justify-between rounded border-solid bg-white shadow-lg xl:h-auto xl:max-w-64 xl:gap-5 xl:pb-3">
+      <div className="h-40 w-full xl:h-52">
         <img
           className="h-full w-full rounded-t-lg object-fill"
           src={image}
           alt={title}
         />
       </div>
-      <div className="flex flex-col items-start justify-start px-2">
+      <div className="flex flex-col items-start justify-start px-2 xl:gap-2">
         <h3 className="line-clamp-1 text-left text-base font-bold lg:text-xl">
           {title}
         </h3>
@@ -76,7 +76,7 @@ const ListAd = ({ adsData, selectedFilters }) => {
   const filteredAds = filterAds(adsData);
 
   return (
-    <div className="w-full grid gap-5 sm:gap-3 grid-cols-2 justify-between sm:grid-cols-3 lg:gap-3 lg:w-7/12 xl:grid-cols-4 xl:w-7/12">
+    <div className="grid w-full grid-cols-2 justify-between gap-5 sm:grid-cols-3 sm:gap-3 lg:w-7/12 lg:gap-3 xl:w-auto xl:grid-cols-4 xl:gap-10">
       {" "}
       {/* Utilise un grid layout */}
       {filteredAds.length > 0 ? (
