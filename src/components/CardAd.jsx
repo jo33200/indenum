@@ -76,7 +76,7 @@ const ListAd = ({ adsData, selectedFilters }) => {
   const filteredAds = filterAds(adsData);
 
   return (
-    <div className="w-full grid gap-5 sm:gap-3 grid-cols-2 justify-between sm:grid-cols-3 lg:gap-4 xl:grid-cols-4 2xl:grid-cols-5">
+    <div className="w-full grid gap-5 sm:gap-3 grid-cols-2 justify-between sm:grid-cols-3 lg:gap-3 lg:w-7/12 xl:grid-cols-4 xl:w-7/12">
       {" "}
       {/* Utilise un grid layout */}
       {filteredAds.length > 0 ? (
