@@ -94,11 +94,11 @@ const Filters = ({
         {filterData.map((filter) => (
           <div key={filter.category} className="mb-2">
             <div
-              className="flex cursor-pointer items-center justify-between gap-1 rounded bg-white p-2 md:border-solid md:border-[0.5px] md:border-zinc-200"
+              className="flex text-gray-600 hover:text-black cursor-pointer items-center justify-between gap-1 rounded bg-white p-2 md:border-solid md:border-[0.5px] md:border-zinc-200 hover:bg-zinc-200"
               onClick={() => toggleCategory(filter.category)}
             >
-              <h3 className="text-base font-bold text-gray-600">{filter.category}</h3>
-              <span className="text-base font-semibold text-gray-600">
+              <h3 className="text-base font-bold ">{filter.category}</h3>
+              <span className="text-base font-semibold ">
                 {openCategories[filter.category] ? "−" : "+"}
               </span>
             </div>
