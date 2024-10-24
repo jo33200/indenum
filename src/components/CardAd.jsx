@@ -36,7 +36,7 @@ const CardAD = ({ title, description, price, image, url }) => {
 CardAD.propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-  price: PropTypes.number.isRequired,
+  price: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
   url: PropTypes.string.isRequired,
 };
@@ -102,7 +102,7 @@ ListAd.propTypes = {
     PropTypes.shape({
       title: PropTypes.string.isRequired,
       description: PropTypes.string.isRequired,
-      price: PropTypes.number.isRequired,
+      price: PropTypes.string.isRequired,
       image: PropTypes.string.isRequired,
       url: PropTypes.string.isRequired,
     }),

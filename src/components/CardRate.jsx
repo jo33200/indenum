@@ -15,7 +15,7 @@ CardRate.propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   category: PropTypes.string.isRequired,
-  price: PropTypes.number.isRequired,
+  price: PropTypes.string.isRequired,
 };
 
 // Fonction pour extraire et convertir le prix depuis une chaîne comme "30€"
@@ -65,7 +65,6 @@ const ListRates = ({ ratesData, selectedFilters }) => {
             description={rate.description}
             price={rate.price}
             image={rate.image}
-            url={rate.url}
           />
         ))
       ) : (
@@ -80,9 +79,8 @@ ListRates.propTypes = {
     PropTypes.shape({
       title: PropTypes.string.isRequired,
       description: PropTypes.string.isRequired,
-      price: PropTypes.number.isRequired,
-      image: PropTypes.string.isRequired,
-      url: PropTypes.string.isRequired,
+      price: PropTypes.string.isRequired,
+      image: PropTypes.string,
       category: PropTypes.string.isRequired,
     }),
   ).isRequired,
