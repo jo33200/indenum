@@ -36,26 +36,16 @@ const Ad = () => {
   // Données de filtrage
   const filterData = [
     {
-      category: "Type d'annonce",
-      subcategories: ["Manette", "Batterie", "Accessoire"],
+      category: "Téléphone",
+      subcategories: ["Apple", "Samsung", "Xiaomi", "Huawei", "Oppo"],
     },
     {
-      category: "Prix",
-      subcategories: ["Moins de 10€", "10€ à 30€", "Plus de 30€"],
+      category: "Tablette",
+      subcategories: ["Apple", "Samsung", "Huawei", "Lenovo", "Microsoft"],
     },
     {
-      category: "Marque",
-      subcategories: ["Apple", "Samsung", "Microsoft", "Sony", "Nintendo"],
-    },
-    {
-      category: "Pièces détachées",
-      subcategories: [
-        "Ecran",
-        "Batterie",
-        "Connecteur de charge",
-        "Vitre arrière",
-        "autres",
-      ],
+      category: "Console",
+      subcategories: ["Microsoft", "Sony", "Nintendo"],
     },
   ];
 
@@ -67,6 +57,17 @@ const Ad = () => {
         : [...prevFilters, subcategory],
     );
   };
+
+  const filteredAds = adsData.filter((ad) => {
+    if (selectedFilters.length === 0) {
+      return true; // Si aucun filtre sélectionné, afficher toutes les annonces
+    }
+    // Vérifier si une des sous-catégories de l'annonce correspond à un filtre sélectionné
+    return (
+      selectedFilters.includes(ad.category) ||
+      selectedFilters.includes(ad.subcategory)
+    );
+  });
 
   // Affichage pendant le chargement
   if (loading) {
@@ -89,7 +90,7 @@ const Ad = () => {
           setOpenCategory={setOpenCategory} // Fonction pour changer la catégorie ouverte
         />
       </div>
-      <ListAd adsData={adsData} selectedFilters={selectedFilters} />{" "}
+      <ListAd adsData={filteredAds} selectedFilters={selectedFilters} />{" "}
       {/* Passer les annonces ici */}
       <ScrollToTopButton />
     </div>
