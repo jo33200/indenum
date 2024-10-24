@@ -1,9 +1,9 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
+import ListRates from "../../components/CardRate";
 import ScrollToTopButton from "../../components/ScrollToTopButton";
 import Filters from "../../components/filters";
 import RatesData from "../../data/rate.json";
-import ListRates from "../../components/CardRate";
 
 const Rate = () => {
   const location = useLocation();
@@ -12,12 +12,6 @@ const Rate = () => {
   const [ratesData, setRatesData] = useState([]);
   const [loading, setLoading] = useState(true); // Pour gérer l'état de chargement
   const [error] = useState(null); // Pour gérer les erreurs
-
-  // Charger les données depuis le fichier JSON
-  useEffect(() => {
-    setRatesData(RatesData); // Charger les données des cartes depuis le fichier JSON
-    setLoading(false); // Arrêter le chargement une fois les données récupérées
-  }, []);
 
   // Gestion des filtres via URL
   useEffect(() => {
@@ -31,48 +25,50 @@ const Rate = () => {
     }
   }, [location]);
 
-  // Chargement des données des annonces
+  // Charger les données depuis le fichier JSON
   useEffect(() => {
-    setRatesData(ratesData); // Charge les annonces depuis le fichier JSON
-    setLoading(false); // Arrête le chargement une fois les données récupérées
+    setRatesData(RatesData); // Charger les données des cartes depuis le fichier JSON
+    setLoading(false); // Arrêter le chargement une fois les données récupérées
   }, []);
 
   // Données de filtrage
   const filterData = [
     {
-      category: "Type d'annonce",
-      subcategories: ["Manette", "Batterie", "Accessoire"],
+      category: "Téléphone",
+      subcategories: ["Apple", "Samsung", "Xiaomi", "Huawei", "Oppo"],
     },
     {
-      category: "Prix",
-      subcategories: ["Moins de 10€", "10€ à 30€", "Plus de 30€"],
+      category: "Tablette",
+      subcategories: ["Apple", "Samsung", "Huawei", "Lenovo", "Microsoft"],
     },
     {
-      category: "Marque",
-      subcategories: ["Apple", "Samsung", "Microsoft", "Sony", "Nintendo"],
-    },
-    {
-      category: "Pièces détachées",
-      subcategories: [
-        "Ecran",
-        "Batterie",
-        "Connecteur de charge",
-        "Vitre arrière",
-        "autres",
-      ],
+      category: "Console",
+      subcategories: ["Microsoft", "Sony", "Nintendo"],
+      subsubcategories: ["PS4", "PS5", "Xbox One", "Xbox Series X", "Switch", "Switch Lite"],
     },
   ];
-
-  
 
   // Gérer l'ajout/suppression des filtres sélectionnés
   const handleFilterChange = (subcategory) => {
     setSelectedFilters((prevFilters) =>
       prevFilters.includes(subcategory)
         ? prevFilters.filter((item) => item !== subcategory)
-        : [...prevFilters, subcategory]
+        : [...prevFilters, subcategory],
     );
   };
+
+  // Filtrer les données en fonction des filtres sélectionnés
+  const filteredRates = ratesData.filter((rate) => {
+    // Si aucun filtre sélectionné, on affiche tout
+    if (selectedFilters.length === 0) {
+      return true;
+    }
+    // Sinon, on vérifie si l'annonce correspond à l'un des filtres sélectionnés
+    return (
+      selectedFilters.includes(rate.category) ||
+      selectedFilters.includes(rate.subcategory)
+    );
+  });
 
   // Affichage pendant le chargement
   if (loading) {
@@ -89,15 +85,14 @@ const Rate = () => {
       {/* Filtres */}
       <div className="w-full md:w-80">
         <Filters
-          filterData={filterData} // Récupérer les filtres depuis le JSON
+          filterData={filterData}
           selectedFilters={selectedFilters}
           onFilterChange={handleFilterChange}
           openCategory={openCategory} // Passer la catégorie ouverte
           setOpenCategory={setOpenCategory} // Gérer l'ouverture de la catégorie
         />
       </div>
-
-      <ListRates ratesData={ratesData} selectedFilters={selectedFilters} />{" "}
+      <ListRates ratesData={filteredRates} selectedFilters={selectedFilters} />{" "}
       {/* Passer les annonces ici */}
       <ScrollToTopButton />
     </div>
