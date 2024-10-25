@@ -69,11 +69,14 @@ const Filters = ({
                   <div className="text-left">
                     {filter.subcategories.map((subcategory) => {
                       if (typeof subcategory === "string") {
+                        const subcategoryId = `filter-${filter.category}-${subcategory}`;
                         return (
                           <div key={subcategory} className="ml-4 mt-2">
-                            <label className="inline-flex items-start">
+                            <label htmlFor={subcategoryId} className="inline-flex items-start">
                               <input
                                 type="checkbox"
+                                id={subcategoryId}
+                                name={subcategory}
                                 value={subcategory}
                                 checked={selectedFilters.includes(subcategory)}
                                 onChange={(e) => onFilterChange(e.target.value)}
@@ -97,20 +100,25 @@ const Filters = ({
                             </div>
                             {openCategories[subcategory.subcategory] && (
                               <div className="ml-4 mt-1">
-                                {subcategory.subSubcategories.map((subSubcat) => (
-                                  <div key={subSubcat} className="mt-1 flex items-center">
-                                    <label className="inline-flex items-center">
-                                      <input
-                                        type="checkbox"
-                                        value={subSubcat}
-                                        checked={selectedFilters.includes(subSubcat)}
-                                        onChange={(e) => onFilterChange(e.target.value)}
-                                        className="form-checkbox"
-                                      />
-                                      <span className="ml-2">{subSubcat}</span>
-                                    </label>
-                                  </div>
-                                ))}
+                                {subcategory.subSubcategories.map((subSubcat) => {
+                                  const subSubcatId = `filter-${subcategory.subcategory}-${subSubcat}`;
+                                  return (
+                                    <div key={subSubcat} className="mt-1 flex items-center">
+                                      <label htmlFor={subSubcatId} className="inline-flex items-center">
+                                        <input
+                                          type="checkbox"
+                                          id={subSubcatId}
+                                          name={subSubcat}
+                                          value={subSubcat}
+                                          checked={selectedFilters.includes(subSubcat)}
+                                          onChange={(e) => onFilterChange(e.target.value)}
+                                          className="form-checkbox"
+                                        />
+                                        <span className="ml-2">{subSubcat}</span>
+                                      </label>
+                                    </div>
+                                  );
+                                })}
                               </div>
                             )}
                           </div>
@@ -143,11 +151,14 @@ const Filters = ({
               <div className="ml-4 mt-2">
                 {filter.subcategories.map((subcategory) => {
                   if (typeof subcategory === "string") {
+                    const subcategoryId = `filter-${filter.category}-${subcategory}`;
                     return (
                       <div key={subcategory} className="text-left">
-                        <label className="inline-flex items-center">
+                        <label htmlFor={subcategoryId} className="inline-flex items-center">
                           <input
                             type="checkbox"
+                            id={subcategoryId}
+                            name={subcategory}
                             value={subcategory}
                             checked={selectedFilters.includes(subcategory)}
                             onChange={(e) => onFilterChange(e.target.value)}
@@ -171,20 +182,25 @@ const Filters = ({
                         </div>
                         {openCategories[subcategory.subcategory] && (
                           <div className="ml-4 mt-1">
-                            {subcategory.subSubcategories.map((subSubcat) => (
-                              <div key={subSubcat} className="text-left">
-                                <label className="inline-flex items-center">
-                                  <input
-                                    type="checkbox"
-                                    value={subSubcat}
-                                    checked={selectedFilters.includes(subSubcat)}
-                                    onChange={(e) => onFilterChange(e.target.value)}
-                                    className="form-checkbox"
-                                  />
-                                  <span className="ml-2">{subSubcat}</span>
-                                </label>
-                              </div>
-                            ))}
+                            {subcategory.subSubcategories.map((subSubcat) => {
+                              const subSubcatId = `filter-${subcategory.subcategory}-${subSubcat}`;
+                              return (
+                                <div key={subSubcat} className="text-left">
+                                  <label htmlFor={subSubcatId} className="inline-flex items-center">
+                                    <input
+                                      type="checkbox"
+                                      id={subSubcatId}
+                                      name={subSubcat}
+                                      value={subSubcat}
+                                      checked={selectedFilters.includes(subSubcat)}
+                                      onChange={(e) => onFilterChange(e.target.value)}
+                                      className="form-checkbox"
+                                    />
+                                    <span className="ml-2">{subSubcat}</span>
+                                  </label>
+                                </div>
+                              );
+                            })}
                           </div>
                         )}
                       </div>
@@ -215,11 +231,11 @@ Filters.propTypes = {
         ),
       ]).isRequired,
     })
-  ).isRequired,
+  ),
   selectedFilters: PropTypes.arrayOf(PropTypes.string).isRequired,
   onFilterChange: PropTypes.func.isRequired,
   openCategory: PropTypes.string,
-  setOpenCategory: PropTypes.func, // Correction ici pour utiliser setOpenCategory
+  setOpenCategory: PropTypes.func,
 };
 
 export default Filters;
