@@ -65,7 +65,7 @@ const Ad = () => {
     // Vérifier si une des sous-catégories de l'annonce correspond à un filtre sélectionné
     return (
       selectedFilters.includes(ad.category) ||
-      selectedFilters.includes(ad.subcategory)
+      selectedFilters.includes(ad.subcategories)
     );
   });
 
