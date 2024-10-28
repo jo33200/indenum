@@ -6,7 +6,7 @@ const Filters = ({
   selectedFilters,
   onFilterChange,
   openCategory,
-  setOpenCategory,
+  onCategoryChange,
 }) => {
   const [openCategories, setOpenCategories] = useState({});
   const [showAllFilters, setShowAllFilters] = useState(false);
@@ -24,11 +24,16 @@ const Filters = ({
 
   const toggleCategory = (category) => {
     setOpenCategories((prev) => {
-      const newOpenState = !prev[category]; // Nouvelle logique pour savoir si la catégorie sera ouverte ou fermée
-      setOpenCategory(newOpenState ? category : ""); // Met à jour la catégorie ouverte dans le parent
+      const newOpenState = !prev[category];
+      
+      // Déclenche la mise à jour du parent après le rendu pour éviter le warning
+      setTimeout(() => {
+        onCategoryChange(newOpenState ? category : ""); 
+      }, 0);
+  
       return {
         ...prev,
-        [category]: newOpenState, // Ouvre ou ferme la catégorie
+        [category]: newOpenState,
       };
     });
   };
@@ -235,7 +240,7 @@ Filters.propTypes = {
   selectedFilters: PropTypes.arrayOf(PropTypes.string).isRequired,
   onFilterChange: PropTypes.func.isRequired,
   openCategory: PropTypes.string,
-  setOpenCategory: PropTypes.func,
+  onCategoryChange: PropTypes.func,
 };
 
 export default Filters;

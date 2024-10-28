@@ -58,6 +58,10 @@ const Ad = () => {
     );
   };
 
+  const handleCategoryChange = (category) => {
+    setOpenCategory(category);
+  };
+
   const filteredAds = adsData.filter((ad) => {
     if (selectedFilters.length === 0) {
       return true; // Si aucun filtre sélectionné, afficher toutes les annonces
@@ -87,7 +91,7 @@ const Ad = () => {
           selectedFilters={selectedFilters}
           onFilterChange={handleFilterChange}
           openCategory={openCategory} // Passer la catégorie à ouvrir
-          setOpenCategory={setOpenCategory} // Fonction pour changer la catégorie ouverte
+          onCategoryChange={handleCategoryChange} // Fonction pour changer la catégorie ouverte
         />
       </div>
       <ListAd adsData={filteredAds} selectedFilters={selectedFilters} />{" "}
