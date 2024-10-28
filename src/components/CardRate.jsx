@@ -1,8 +1,12 @@
 import PropTypes from "prop-types";
 
-const CardRate = ({ title, description, category, price }) => {
+const CardRate = ({ title, description, category, price, image }) => {
+
+  const imagePath = `/src/assets/img/${image}.png`;
+  
   return (
     <div className="rounded-lg bg-white p-4 shadow-lg">
+      <img src={imagePath} alt={title} className="w-full h-auto rounded-t-lg" />
       <h2 className="text-xl font-bold">{title}</h2>
       <p className="text-gray-700">{description}</p>
       <span className="text-sm text-gray-500">{category}</span>
@@ -16,6 +20,7 @@ CardRate.propTypes = {
   description: PropTypes.string.isRequired,
   category: PropTypes.string.isRequired,
   price: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
 };
 
 // Fonction pour extraire et convertir le prix depuis une chaîne comme "30€"
