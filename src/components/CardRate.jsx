@@ -53,7 +53,7 @@ const ListRates = ({ ratesData, selectedFilters }) => {
   const filteredRates = filterRates(ratesData);
 
   return (
-    <div className="grid w-full grid-cols-2 justify-between gap-5 sm:grid-cols-3 sm:gap-3 lg:w-7/12 lg:gap-3 xl:w-auto xl:grid-cols-4 xl:gap-10">
+    <div className="grid w-full max-w-[1144px] grid-cols-2 justify-between gap-5 sm:grid-cols-3 sm:gap-3 lg:w-7/12 lg:gap-3 xl:w-auto xl:grid-cols-4 xl:gap-10">
       {" "}
       {/* Utilise un grid layout */}
       {filteredRates.length > 0 ? (
@@ -68,7 +68,7 @@ const ListRates = ({ ratesData, selectedFilters }) => {
           />
         ))
       ) : (
-        <p>Aucune annonce ne correspond aux filtres sélectionnés.</p>
+        <p className="w-[256px]">Aucune résultat dans la recherche.</p>
       )}
     </div>
   );
