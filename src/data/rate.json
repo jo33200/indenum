@@ -1,6 +1,7 @@
 [
     {
         "title": "Carte-Fille Jack",
+        "image": "switchLite",
         "description": "changement carte fille pour le port Jack",
         "price": "25",
         "category": "Console",
@@ -9,6 +10,7 @@
     },
     {
         "title": "Joystick Noir Joy-Con",
+        "image": "switchLite",
         "description": "compatible  1R,2Bl,1B",
         "price": "30",
         "category": "Console",
@@ -17,6 +19,7 @@
     },
     {
         "title": "Connecteur de Charge Nintendo",
+        "image": "switchLite",
         "description": "changement du connecteur de charge",
         "price": "50",
         "category": "Console",
@@ -25,6 +28,7 @@
     },
     {
         "title": "Vitre Tactile",
+        "image": "switchLite",
         "description": "changement de vitre tactile Noire, B et T",
         "price": "50",
         "category": "Console",
@@ -33,6 +37,7 @@
     },
     {
         "title": "Ventilateur Nintendo",
+        "image": "switchLite",
         "description": "changement du ventilateur pièce et main d'œuvre",
         "price": "30",
         "category": "Console",
@@ -41,6 +46,7 @@
     },
     {
         "title": "Lecteur de Cartouches",
+        "image": "switchLite",
         "description": "changement du lecteur de cartouche",
         "price": "40",
         "category": "Console",
@@ -49,6 +55,7 @@
     },
     {
         "title": "Bouton Gauche/Droit",
+        "image": "switchLite",
         "description": "changement du bouton gauche ou droite",
         "price": "30",
         "category": "Console",
@@ -57,6 +64,7 @@
     },
     {
         "title": "Drift Fix",
+        "image": "manettePS4",
         "description": "Pcb Drift Fix Pour manette",
         "price": "15",
         "category": "Console",
@@ -65,6 +73,7 @@
     },
     {
         "title": "Module Joystick Manette",
+        "image": "manettePS4",
         "description": "changement du module joystick manette",
         "price": "20",
         "category": "Console",
@@ -73,6 +82,7 @@
     },
     {
         "title": "Capuchon Joystick",
+        "image": "manettePS4",
         "description": "changement du capuchon de joystick pour Dualshock 4 V1",
         "price": "7",
         "category": "Console",
@@ -81,6 +91,7 @@
     },
     {
         "title": "Connecteur de Charge PS4",
+        "image": "manettePS4",
         "description": "compatibilité manette ps4 V1 à V5",
         "price": "15",
         "category": "Console",
@@ -89,6 +100,7 @@
     },
     {
         "title": "Batterie Manette",
+        "image": "manettePS4",
         "description": "compatibilité V1 et V2 (1000mAh)",
         "price": "15",
         "category": "Console",
@@ -97,6 +109,7 @@
     },
     {
         "title": "Connecteur de Charge PS5",
+        "image": "manettePS5",
         "description": "Connecteur de Charge USB-C Manette",
         "price": "30",
         "category": "Console",
@@ -105,6 +118,7 @@
     },
     {
         "title": "Coque Complète Blanche Dualsense",
+        "image": "manettePS5",
         "description": "PS5 (BDM-010)",
         "price": "30",
         "category": "Console",
@@ -113,6 +127,7 @@
     },
     {
         "title": "Module Joystick Dualsense",
+        "image": "manettePS5",
         "description": "PS5 (BDM-010)",
         "price": "26",
         "category": "Console",
@@ -121,6 +136,7 @@
     },
     {
         "title": "Module Joystick Analogique",
+        "image": "manettePS5",
         "description": "3D",
         "price": "26",
         "category": "Console",
@@ -129,6 +145,7 @@
     },
     {
         "title": "Prise Jack Casque",
+        "image": "manettePS5",
         "description": "changement de la prise jack pièce et main d'œuvre",
         "price": "28",
         "category": "Console",
