@@ -3,14 +3,18 @@ import PropTypes from "prop-types";
 const CardRate = ({ title, description, category, price, image }) => {
 
   const imagePath = `/src/assets/img/${image}.png`;
-  
+
   return (
-    <div className="rounded-lg bg-white p-4 shadow-lg">
-      <img src={imagePath} alt={title} className="w-full h-auto rounded-t-lg" />
-      <h2 className="text-xl font-bold">{title}</h2>
-      <p className="text-gray-700">{description}</p>
-      <span className="text-sm text-gray-500">{category}</span>
-      <p className="text-sm text-gray-900">{price}€</p>
+    <div className="flex h-80 w-full flex-col items-start justify-between rounded border border-gray-300 bg-white shadow-lg xl:h-auto xl:max-w-64 xl:gap-5 xl:pb-3">
+      <div className="h-32 w-full flex justify-center items-center">
+        <img src={imagePath} alt={title} className="h-2/3 w-2/3 object-fill" />
+      </div>
+      <div className="flex flex-col items-start justify-start px-2 xl:gap-2">
+        <h3 className="line-clamp-1 text-left text-base font-bold lg:text-xl">{title}</h3>
+        <p className="line-clamp-1 text-left text-xs text-gray-700 lg:text-base">{description}</p>
+        <span className="text-sm text-gray-500">{category}</span>
+        <p className="font-semibold text-sm md:text-base lg:text-lg">{price}€</p>
+      </div>
     </div>
   );
 };
