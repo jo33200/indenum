@@ -57,6 +57,10 @@ const Rate = () => {
     );
   };
 
+  const handleCategoryChange = (category) => {
+    setOpenCategory(category);
+  };
+
   // Filtrer les données en fonction des filtres sélectionnés
   const filteredRates = ratesData.filter((rate) => {
     // Si aucun filtre sélectionné, on affiche tout
@@ -89,7 +93,7 @@ const Rate = () => {
           selectedFilters={selectedFilters}
           onFilterChange={handleFilterChange}
           openCategory={openCategory} // Passer la catégorie ouverte
-          setOpenCategory={setOpenCategory} // Gérer l'ouverture de la catégorie
+          onCategoryChange={handleCategoryChange} // Gérer l'ouverture de la catégorie
         />
       </div>
       <ListRates ratesData={filteredRates} selectedFilters={selectedFilters} />{" "}

@@ -74,7 +74,7 @@ const Filters = ({
                   <div className="text-left">
                     {filter.subcategories.map((subcategory) => {
                       if (typeof subcategory === "string") {
-                        const subcategoryId = `filter-${filter.category}-${subcategory}`;
+                        const subcategoryId = `filter-${filter.category}-${subcategory}-${Date.now()}`;
                         return (
                           <div key={subcategory} className="ml-4 mt-2">
                             <label htmlFor={subcategoryId} className="inline-flex items-start">
@@ -106,7 +106,7 @@ const Filters = ({
                             {openCategories[subcategory.subcategory] && (
                               <div className="ml-4 mt-1">
                                 {subcategory.subSubcategories.map((subSubcat) => {
-                                  const subSubcatId = `filter-${subcategory.subcategory}-${subSubcat}`;
+                                  const subSubcatId = `filter-${subcategory.subcategory}-${subSubcat}-${Date.now()}`;
                                   return (
                                     <div key={subSubcat} className="mt-1 flex items-center">
                                       <label htmlFor={subSubcatId} className="inline-flex items-center">

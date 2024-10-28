@@ -76,7 +76,7 @@ const ListAd = ({ adsData, selectedFilters }) => {
   const filteredAds = filterAds(adsData);
 
   return (
-    <div className="grid w-full grid-cols-2 justify-between gap-5 sm:grid-cols-3 sm:gap-3 lg:w-7/12 lg:gap-3 xl:w-auto xl:grid-cols-4 xl:gap-10 max-w-[1144px]">
+    <div className="grid w-full max-w-[1144px] grid-cols-2 justify-between gap-5 sm:grid-cols-3 sm:gap-3 lg:w-7/12 lg:gap-3 xl:w-auto xl:grid-cols-4 xl:gap-10">
       {" "}
       {/* Utilise un grid layout */}
       {filteredAds.length > 0 ? (
@@ -91,7 +91,7 @@ const ListAd = ({ adsData, selectedFilters }) => {
           />
         ))
       ) : (
-        <p>Aucun résultat dans la recherche.</p>
+        <p className="w-[256px]">Aucun résultat dans la recherche.</p>
       )}
     </div>
   );
