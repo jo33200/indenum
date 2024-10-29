@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "postbuild": "cpx \"assets/**/*\" dist/assets",
     "serve": "node server.js",
     "lint": "eslint .",
     "preview": "vite preview",
@@ -29,6 +30,7 @@
     "@types/react-dom": "^18.3.0",
     "@vitejs/plugin-react": "^4.3.1",
     "autoprefixer": "^10.4.20",
+    "cpx": "^1.5.0",
     "eslint": "^9.12.0",
     "eslint-plugin-react": "^7.37.1",
     "eslint-plugin-react-hooks": "^5.1.0-rc.0",
