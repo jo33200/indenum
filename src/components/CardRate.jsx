@@ -5,7 +5,7 @@ import images from "../assets/images";
 const CardRate = ({ title, description, category, price, image }) => {
 
   return (
-    <div className="flex h-80 w-full flex-col items-start justify-between rounded border border-gray-300 bg-white shadow-lg xl:h-auto xl:max-w-64 xl:gap-5 xl:pb-3">
+    <div className="flex h-auto w-full flex-col items-start justify-between rounded border border-gray-300 bg-white shadow-lg  xl:max-w-64 xl:gap-5 xl:pb-3">
       <div className="h-32 w-full flex justify-center items-center">
         <img src={images[image]} alt={title} className="h-2/3 w-2/3 object-fill" />
       </div>
@@ -62,7 +62,7 @@ const ListRates = ({ ratesData, selectedFilters }) => {
   const filteredRates = filterRates(ratesData);
 
   return (
-    <div className="grid w-full max-w-[1144px] grid-cols-2 justify-between gap-5 sm:grid-cols-3 sm:gap-3 lg:w-7/12 lg:gap-3 xl:w-auto xl:grid-cols-4 xl:gap-10">
+    <div className="grid w-full justify-center item-center gap-5 max-w-[1144px] grid-cols-2 sm:justify-between sm:grid-cols-3 sm:gap-3 lg:w-7/12 lg:gap-3 xl:w-auto xl:grid-cols-4 xl:gap-10">
       {" "}
       {/* Utilise un grid layout */}
       {filteredRates.length > 0 ? (
