@@ -1,10 +1,9 @@
-import ContactForm from "../../components/ContactForm";
+import FormQuote from "../../components/FormQuote";
 
 const Quote = () => {
   return (
     <div>
-      <h1>Demande de devis</h1>
-      <ContactForm />
+      <FormQuote />
     </div>
   );
 };
