@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "postbuild": "cpx \"_assets/**/*\" dist/assets",
+    "postbuild": "cpx \"src/assets/**/*\" dist/assets",
     "serve": "node server.js",
     "lint": "eslint .",
     "preview": "vite preview",
