@@ -1,13 +1,13 @@
 import PropTypes from "prop-types";
+import images from "../assets/images";
+
 
 const CardRate = ({ title, description, category, price, image }) => {
-
-  const imagePath = `/src/assets/img/${image}.png`;
 
   return (
     <div className="flex h-80 w-full flex-col items-start justify-between rounded border border-gray-300 bg-white shadow-lg xl:h-auto xl:max-w-64 xl:gap-5 xl:pb-3">
       <div className="h-32 w-full flex justify-center items-center">
-        <img src={imagePath} alt={title} className="h-2/3 w-2/3 object-fill" />
+        <img src={images[image]} alt={title} className="h-2/3 w-2/3 object-fill" />
       </div>
       <div className="flex flex-col items-start justify-start px-2 xl:gap-2">
         <h3 className="line-clamp-1 text-left text-base font-bold lg:text-xl">{title}</h3>
