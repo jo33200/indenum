@@ -11,7 +11,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "vite build && copyfiles -u 1 \"src/assets/**/*\" dist/assets && gh-pages -d dist"
+    "deploy": "vite build && copyfiles -u 2 \"src/assets/**/*\" dist/assets && gh-pages -d dist"
   },
   "dependencies": {
     "@fortawesome/free-solid-svg-icons": "^6.6.0",
