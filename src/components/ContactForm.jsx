@@ -45,6 +45,7 @@ const ContactForm = () => {
             className="w-full rounded-md border px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
             placeholder="Entrez votre nom"
             required
+            autoComplete="name"
           />
         </div>
 
@@ -61,6 +62,7 @@ const ContactForm = () => {
             className="w-full rounded-md border px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
             placeholder="Entrez votre adresse email"
             required
+            autoComplete="email"
           />
         </div>
 
@@ -77,6 +79,7 @@ const ContactForm = () => {
             className="w-full rounded-md border px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
             placeholder="Entrez votre numéro de téléphone"
             required
+            autoComplete="tel"
           />
         </div>
 
