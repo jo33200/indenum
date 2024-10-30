@@ -4,6 +4,7 @@ import ListRates from "../../components/CardRate";
 import ScrollToTopButton from "../../components/ScrollToTopButton";
 import Filters from "../../components/filters";
 import RatesData from "../../data/rate.json";
+import { Link } from "react-router-dom";
 
 const Rate = () => {
   const location = useLocation();
@@ -44,7 +45,14 @@ const Rate = () => {
     {
       category: "Console",
       subcategories: ["Microsoft", "Sony", "Nintendo"],
-      subsubcategories: ["PS4", "PS5", "Xbox One", "Xbox Series X", "Switch", "Switch Lite"],
+      subsubcategories: [
+        "PS4",
+        "PS5",
+        "Xbox One",
+        "Xbox Series X",
+        "Switch",
+        "Switch Lite",
+      ],
     },
   ];
 
@@ -87,7 +95,7 @@ const Rate = () => {
   return (
     <div className="my-5 flex h-auto w-full flex-col items-start gap-5 px-2 sm:w-full md:flex-row md:items-start md:justify-around xl:my-32">
       {/* Filtres */}
-      <div className="w-full md:w-80">
+      <div className="flex w-full md:w-80 md:flex-col">
         <Filters
           filterData={filterData}
           selectedFilters={selectedFilters}
@@ -95,18 +103,27 @@ const Rate = () => {
           openCategory={openCategory} // Passer la catégorie ouverte
           onCategoryChange={handleCategoryChange} // Gérer l'ouverture de la catégorie
         />
-        <div className="mt-5 w-full p-4 border-[0.5px] border-zinc-200 rounded-lg ">
-          <p className="text-gray-700 text-base mb-2">
-            Si la réparation qui vous intéresse ne figure pas dans notre liste, vous pouvez demander un
+        <div className="hidden md:block max-h-24 md:max-h-full w-full rounded-lg border-[0.5px] border-zinc-200 p-1 md:mt-5 md:p-4">
+          <p className="text-sm md:text-base text-gray-700 md:mb-2">
+            Si la réparation qui vous intéresse ne figure pas dans notre liste,
+            vous pouvez demander un
           </p>
-          <a href="#" className="mt-6 inline-block text-blue-500 font-semibold hover:text-blue-700 transition-colors duration-200">
+          <Link to="/quote" className="inline-block font-semibold text-blue-500 transition-colors duration-200 hover:text-blue-700 hover:cursor-pointer md:mt-6">
             devis personnalisé
-          </a>
+          </Link>
         </div>
-        
       </div>
       <ListRates ratesData={filteredRates} selectedFilters={selectedFilters} />{" "}
       {/* Passer les annonces ici */}
+      <div className="md:hidden max-h-full w-full rounded-lg border-[0.5px] border-zinc-200 mt-5 p-4">
+          <p className="text-base text-gray-700 font-semibold mb-2">
+            Si la réparation qui vous intéresse ne figure pas dans notre liste,
+            vous pouvez demander un
+          </p>
+          <Link to="/quote" className="inline-block font-semibold text-blue-500 transition-colors duration-200 hover:text-blue-700 hover:cursor-pointer mt-6">
+            devis personnalisé
+          </Link>
+        </div>
       <ScrollToTopButton />
     </div>
   );
