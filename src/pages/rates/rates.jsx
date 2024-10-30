@@ -95,6 +95,15 @@ const Rate = () => {
           openCategory={openCategory} // Passer la catégorie ouverte
           onCategoryChange={handleCategoryChange} // Gérer l'ouverture de la catégorie
         />
+        <div className="mt-5 w-full p-4 border-[0.5px] border-zinc-200 rounded-lg ">
+          <p className="text-gray-700 text-base mb-2">
+            Si la réparation qui vous intéresse ne figure pas dans notre liste, vous pouvez demander un
+          </p>
+          <a href="#" className="mt-6 inline-block text-blue-500 font-semibold hover:text-blue-700 transition-colors duration-200">
+            devis personnalisé
+          </a>
+        </div>
+        
       </div>
       <ListRates ratesData={filteredRates} selectedFilters={selectedFilters} />{" "}
       {/* Passer les annonces ici */}
