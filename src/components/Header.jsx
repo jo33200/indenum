@@ -22,7 +22,7 @@ const Header = () => {
           <div className="hidden w-96 lg:flex lg:justify-center">
             <img src={CleTournevis} alt="Cle et Tournevis" className="h-auto w-12 md:w-16 lg:w-20 xl:w-24"/>
           </div>
-          <div className="">
+          <div className="flex flex-col justify-center items-center">
             <img src={Logo} alt="Indenum" className="h-auto w-48 md:w-60 lg:w-72 xl:w-96"/>
             <p className="container w-full text-xs font-semibold text-white sm:text-sm md:text-base">
           Service de Réparation pour vos objets électroniques
