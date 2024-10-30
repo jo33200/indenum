@@ -52,19 +52,46 @@ const RequestQuote = () => {
         {/* Nom */}
         <div className="mb-4">
           <label className="block text-gray-700 mb-2" htmlFor="name">Nom</label>
-          <input type="text" id="name" name="name" value={contactData.name} onChange={handleChange} className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required />
+          <input 
+            type="text" 
+            id="name" 
+            name="name" 
+            value={contactData.name} 
+            onChange={handleChange} 
+            className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" 
+            required
+            autoComplete='name' 
+            />
         </div>
 
         {/* Email */}
         <div className="mb-4">
           <label className="block text-gray-700 mb-2" htmlFor="email">Email</label>
-          <input type="email" id="email" name="email" value={contactData.email} onChange={handleChange} className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required />
+          <input 
+            type="email" 
+            id="email" 
+            name="email" 
+            value={contactData.email} 
+            onChange={handleChange} 
+            className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" 
+            required
+            autoComplete='email' 
+            />
         </div>
 
         {/* Téléphone */}
         <div className="mb-4">
           <label className="block text-gray-700 mb-2" htmlFor="phone">Numéro de Téléphone</label>
-          <input type="tel" id="phone" name="phone" value={contactData.phone} onChange={handleChange} className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required />
+          <input 
+            type="tel" 
+            id="phone" 
+            name="phone" 
+            value={contactData.phone} 
+            onChange={handleChange} 
+            className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" 
+            required 
+            autoComplete='tel'
+            />
         </div>
 
         {/* Catégorie de Service */}
@@ -97,14 +124,31 @@ const RequestQuote = () => {
         {contactData.brand && contactData.brand !== 'Autres' && contactData.deviceType !== 'autres' && (
           <div className="mb-4">
             <label className="block text-gray-700 mb-2" htmlFor="model">Modèle</label>
-            <input type="text" id="model" name="model" value={contactData.model} onChange={handleChange} className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required />
+            <input 
+              type="text" 
+              id="model" 
+              name="model" 
+              value={contactData.model} 
+              onChange={handleChange} 
+              className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" 
+              required 
+              autoComplete='text'/>
           </div>
         )}
 
         {/* Description du Problème */}
         <div className="mb-4">
           <label className="block text-gray-700 mb-2" htmlFor="description">Description du Problème</label>
-          <textarea id="description" name="description" value={contactData.description} onChange={handleChange} rows="4" className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required></textarea>
+          <textarea 
+            id="description" 
+            name="description" 
+            value={contactData.description} 
+            onChange={handleChange} 
+            rows="4" 
+            className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" 
+            required
+            > 
+            </textarea>
         </div>
 
         <ButtonValid onClick={sendContactEmail}/>
