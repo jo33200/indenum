@@ -30,7 +30,7 @@ const Header = () => {
           </div>
           <ul className="hidden w-96 lg:flex flex-col justify-around items-end text-left text-base font-semibold text-white">
             <li>
-              <a href="mailto:indenum@outlook.com">
+              <a href="mailto:indenum@outlook.com" className="hover:cursor-pointer">
                 <FontAwesomeIcon icon={faEnvelope} className="mr-2"/>
                 indenum@outlook.com
               </a>
