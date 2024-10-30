@@ -1,4 +1,4 @@
-import FormQuote from "../../components/FormQuote";
+import FormQuote from "../../components/QuoteForm";
 
 const Quote = () => {
   return (
