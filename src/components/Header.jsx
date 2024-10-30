@@ -30,8 +30,11 @@ const Header = () => {
           </div>
           <ul className="hidden w-96 lg:flex flex-col justify-around items-end text-left text-base font-semibold text-white">
             <li>
-              <FontAwesomeIcon icon={faEnvelope} className="mr-2"/>
-              indenum@outlook.com</li>
+              <a href="mailto:indenum@outlook.com">
+                <FontAwesomeIcon icon={faEnvelope} className="mr-2"/>
+                indenum@outlook.com
+              </a>
+            </li>
             <li>
               <FontAwesomeIcon icon={faPhone} className="mr-2"/>
               07 66 44 13 37</li>
