@@ -38,7 +38,18 @@ const RequestQuote = () => {
     const userID = 'Q-hXLrRhbwsCWFw1D';
 
     emailjs.send(serviceID, templateID, contactData, userID)
-      .then(() => alert("Votre message a bien été envoyé !"))
+      .then(() => {
+        alert("Votre message a bien été envoyé !");
+        setContactData({
+          name: '',
+          email: '',
+          phone: '',
+          deviceType: '',
+          brand: '',
+          model: '',
+          description: '',
+        });
+      })
       .catch((err) => console.error("Erreur d'envoi du message : ", err));
   };
 
