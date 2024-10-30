@@ -7,6 +7,8 @@ import {
   Navigate,
 } from "react-router-dom";
 
+import ScrollTopNavigate from "./components/ScrollTopNavigate";
+
 import Home from "./pages/home/home";
 import Ad from "./pages/ad/ad";
 import Quote from "./pages/quote/quote";
@@ -16,6 +18,7 @@ import Rates from "./pages/rates/rates";
 function App() {
   return (
     <Router>
+      <ScrollTopNavigate />
       <div className="m-0 flex h-auto w-full flex-col items-center text-center">
         <Header />
         <Routes>
