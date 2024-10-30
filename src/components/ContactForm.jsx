@@ -1,8 +1,9 @@
 import { useState } from "react";
 import ButtonValid from "./ButtonValid";
+import emailjs from "emailjs-com";
 
 const ContactForm = () => {
-  const [formData, setFormData] = useState({
+  const [contactData, setContactData] = useState({
     name: "",
     email: "",
     phone: "",
@@ -10,16 +11,18 @@ const ContactForm = () => {
   });
 
   const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
+    const { name, value } = e.target;
+    setContactData({ ...contactData, [name]: value });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Logic for submitting the form
-    console.log(formData);
+  const sendContactEmail = () => {
+    const serviceID = 'service_85dzjsi';
+    const templateID = 'template_ysa7hnr';
+    const userID = 'Q-hXLrRhbwsCWFw1D';
+
+    emailjs.send(serviceID, templateID, contactData, userID)
+      .then(() => alert("Votre message a bien été envoyé !"))
+      .catch((err) => console.error("Erreur d'envoi du message : ", err));
   };
 
   return (
@@ -28,7 +31,7 @@ const ContactForm = () => {
       <p className="mb-6 text-center text-gray-600">
         Pour toute demande, vous pouvez nous envoyer un message
       </p>
-      <form onSubmit={handleSubmit}>
+      <form >
         {/* Nom */}
         <div className="mb-4">
           <label className="mb-1 block font-semibold text-gray-700">
@@ -37,7 +40,7 @@ const ContactForm = () => {
           <input
             type="text"
             name="name"
-            value={formData.name}
+            value={contactData.name}
             onChange={handleChange}
             className="w-full rounded-md border px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
             placeholder="Entrez votre nom"
@@ -53,7 +56,7 @@ const ContactForm = () => {
           <input
             type="email"
             name="email"
-            value={formData.email}
+            value={contactData.email}
             onChange={handleChange}
             className="w-full rounded-md border px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
             placeholder="Entrez votre adresse email"
@@ -69,7 +72,7 @@ const ContactForm = () => {
           <input
             type="tel"
             name="phone"
-            value={formData.phone}
+            value={contactData.phone}
             onChange={handleChange}
             className="w-full rounded-md border px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
             placeholder="Entrez votre numéro de téléphone"
@@ -84,7 +87,7 @@ const ContactForm = () => {
           </label>
           <textarea
             name="message"
-            value={formData.message}
+            value={contactData.message}
             onChange={handleChange}
             className="w-full rounded-md border px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
             placeholder="Écrivez votre message ici (max. 120 mots)"
@@ -94,7 +97,7 @@ const ContactForm = () => {
           />
         </div>
 
-        <ButtonValid />
+        <ButtonValid onClick={sendContactEmail} />
       </form>
     </div>
   );
