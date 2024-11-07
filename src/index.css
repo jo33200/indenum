@@ -27,3 +27,8 @@
     -webkit-line-clamp: 2;
   }
 }
+
+.header-border-gradient {
+  border-bottom: 1px solid;
+  border-image: linear-gradient(to right, white 10%, gray 50%, white 90%) 1;
+}
