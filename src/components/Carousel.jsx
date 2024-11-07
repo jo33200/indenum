@@ -43,7 +43,7 @@ const Carousel = () => {
       {slogans.map((slogan, index) => (
         <p
           key={index}
-          className={`absolute text-center font-openSans text-white transition-opacity duration-1000 ease-in-out ${
+          className={`absolute text-center font-openSans text-gray-600 transition-opacity duration-1000 ease-in-out ${
             index === currentIndex ? "opacity-100" : "opacity-0"
           }`}
           style={{

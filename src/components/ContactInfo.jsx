@@ -22,7 +22,7 @@ const ContactInfo = ({ isFooter = false }) => (
     </nav>
     {/* Intégration de la carte Google Maps via iframe */}
     <div className={`${isFooter ? "" : "flex justify-center"}`}>
-      <ContactMap />
+      <ContactMap className="max-w-40 md:w-100%" />
     </div>
   </div>
 );

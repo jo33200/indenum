@@ -1,6 +1,6 @@
+import emailjs from "emailjs-com";
 import { useState } from "react";
 import ButtonValid from "./ButtonValid";
-import emailjs from "emailjs-com";
 
 const ContactForm = () => {
   const [contactData, setContactData] = useState({
@@ -16,22 +16,23 @@ const ContactForm = () => {
   };
 
   const sendContactEmail = (e) => {
-    e.preventDefault(); 
-    const serviceID = 'service_85dzjsi';
-    const templateID = 'template_ysa7hnr';
-    const userID = 'Q-hXLrRhbwsCWFw1D';
+    e.preventDefault();
+    const serviceID = "service_85dzjsi";
+    const templateID = "template_ysa7hnr";
+    const userID = "Q-hXLrRhbwsCWFw1D";
 
-    emailjs.send(serviceID, templateID, contactData, userID)
-    .then(() => {
-      alert("Votre message a bien été envoyé !");
-      // Réinitialiser les champs du formulaire
-      setContactData({
-        name: "",
-        email: "",
-        phone: "",
-        message: "",
-      });
-    })
+    emailjs
+      .send(serviceID, templateID, contactData, userID)
+      .then(() => {
+        alert("Votre message a bien été envoyé !");
+        // Réinitialiser les champs du formulaire
+        setContactData({
+          name: "",
+          email: "",
+          phone: "",
+          message: "",
+        });
+      })
       .catch((err) => console.error("Erreur d'envoi du message : ", err));
   };
 
@@ -44,12 +45,15 @@ const ContactForm = () => {
       <form onSubmit={sendContactEmail}>
         {/* Nom */}
         <div className="mb-4">
-          <label htmlFor="name" className="mb-1 block font-semibold text-gray-700">
+          <label
+            htmlFor="name"
+            className="mb-1 block font-semibold text-gray-700"
+          >
             Votre nom
           </label>
           <input
             type="text"
-            id="name" 
+            id="name"
             name="name"
             value={contactData.name}
             onChange={handleChange}
@@ -62,12 +66,15 @@ const ContactForm = () => {
 
         {/* Email */}
         <div className="mb-4">
-          <label htmlFor="email" className="mb-1 block font-semibold text-gray-700">
+          <label
+            htmlFor="email"
+            className="mb-1 block font-semibold text-gray-700"
+          >
             Votre adresse email
           </label>
           <input
             type="email"
-            id="email" 
+            id="email"
             name="email"
             value={contactData.email}
             onChange={handleChange}
@@ -80,12 +87,15 @@ const ContactForm = () => {
 
         {/* Téléphone */}
         <div className="mb-4">
-          <label htmlFor="phone" className="mb-1 block font-semibold text-gray-700">
+          <label
+            htmlFor="phone"
+            className="mb-1 block font-semibold text-gray-700"
+          >
             Votre numéro de téléphone
           </label>
           <input
             type="tel"
-            id="phone" 
+            id="phone"
             name="phone"
             value={contactData.phone}
             onChange={handleChange}
@@ -98,11 +108,14 @@ const ContactForm = () => {
 
         {/* Message */}
         <div className="mb-4">
-          <label htmlFor="message" className="mb-1 block font-semibold text-gray-700">
+          <label
+            htmlFor="message"
+            className="mb-1 block font-semibold text-gray-700"
+          >
             Votre message
           </label>
           <textarea
-            id="message" 
+            id="message"
             name="message"
             value={contactData.message}
             onChange={handleChange}
