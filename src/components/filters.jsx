@@ -25,12 +25,12 @@ const Filters = ({
   const toggleCategory = (category) => {
     setOpenCategories((prev) => {
       const newOpenState = !prev[category];
-      
+
       // Déclenche la mise à jour du parent après le rendu pour éviter le warning
       setTimeout(() => {
-        onCategoryChange(newOpenState ? category : ""); 
+        onCategoryChange(newOpenState ? category : "");
       }, 0);
-  
+
       return {
         ...prev,
         [category]: newOpenState,
@@ -77,7 +77,10 @@ const Filters = ({
                         const subcategoryId = `filter-${filter.category}-${subcategory}-${Date.now()}`;
                         return (
                           <div key={subcategory} className="ml-4 mt-2">
-                            <label htmlFor={subcategoryId} className="inline-flex items-start">
+                            <label
+                              htmlFor={subcategoryId}
+                              className="inline-flex items-start"
+                            >
                               <input
                                 type="checkbox"
                                 id={subcategoryId}
@@ -91,39 +94,60 @@ const Filters = ({
                             </label>
                           </div>
                         );
-                      } else if (typeof subcategory === "object" && subcategory.subcategory) {
+                      } else if (
+                        typeof subcategory === "object" &&
+                        subcategory.subcategory
+                      ) {
                         return (
                           <div key={subcategory.subcategory} className="mb-2">
                             <div
                               className="flex cursor-pointer items-center justify-between font-semibold text-gray-700"
-                              onClick={() => toggleCategory(subcategory.subcategory)}
+                              onClick={() =>
+                                toggleCategory(subcategory.subcategory)
+                              }
                             >
                               {subcategory.subcategory}
                               <span className="text-lg">
-                                {openCategories[subcategory.subcategory] ? "−" : "+"}
+                                {openCategories[subcategory.subcategory]
+                                  ? "−"
+                                  : "+"}
                               </span>
                             </div>
                             {openCategories[subcategory.subcategory] && (
                               <div className="ml-4 mt-1">
-                                {subcategory.subSubcategories.map((subSubcat) => {
-                                  const subSubcatId = `filter-${subcategory.subcategory}-${subSubcat}-${Date.now()}`;
-                                  return (
-                                    <div key={subSubcat} className="mt-1 flex items-center">
-                                      <label htmlFor={subSubcatId} className="inline-flex items-center">
-                                        <input
-                                          type="checkbox"
-                                          id={subSubcatId}
-                                          name={subSubcat}
-                                          value={subSubcat}
-                                          checked={selectedFilters.includes(subSubcat)}
-                                          onChange={(e) => onFilterChange(e.target.value)}
-                                          className="form-checkbox"
-                                        />
-                                        <span className="ml-2">{subSubcat}</span>
-                                      </label>
-                                    </div>
-                                  );
-                                })}
+                                {subcategory.subSubcategories.map(
+                                  (subSubcat) => {
+                                    const subSubcatId = `filter-${subcategory.subcategory}-${subSubcat}-${Date.now()}`;
+                                    return (
+                                      <div
+                                        key={subSubcat}
+                                        className="mt-1 flex items-center"
+                                      >
+                                        <label
+                                          htmlFor={subSubcatId}
+                                          className="inline-flex items-center"
+                                        >
+                                          <input
+                                            type="checkbox"
+                                            id={subSubcatId}
+                                            name={subSubcat}
+                                            value={subSubcat}
+                                            checked={selectedFilters.includes(
+                                              subSubcat,
+                                            )}
+                                            onChange={(e) =>
+                                              onFilterChange(e.target.value)
+                                            }
+                                            className="form-checkbox"
+                                          />
+                                          <span className="ml-2">
+                                            {subSubcat}
+                                          </span>
+                                        </label>
+                                      </div>
+                                    );
+                                  },
+                                )}
                               </div>
                             )}
                           </div>
@@ -159,7 +183,10 @@ const Filters = ({
                     const subcategoryId = `filter-${filter.category}-${subcategory}`;
                     return (
                       <div key={subcategory} className="text-left">
-                        <label htmlFor={subcategoryId} className="inline-flex items-center">
+                        <label
+                          htmlFor={subcategoryId}
+                          className="inline-flex items-center"
+                        >
                           <input
                             type="checkbox"
                             id={subcategoryId}
@@ -173,16 +200,23 @@ const Filters = ({
                         </label>
                       </div>
                     );
-                  } else if (typeof subcategory === "object" && subcategory.subcategory) {
+                  } else if (
+                    typeof subcategory === "object" &&
+                    subcategory.subcategory
+                  ) {
                     return (
                       <div key={subcategory.subcategory} className="mb-2">
                         <div
                           className="flex cursor-pointer items-center justify-between font-semibold text-gray-700"
-                          onClick={() => toggleCategory(subcategory.subcategory)}
+                          onClick={() =>
+                            toggleCategory(subcategory.subcategory)
+                          }
                         >
                           {subcategory.subcategory}
                           <span className="text-lg">
-                            {openCategories[subcategory.subcategory] ? "−" : "+"}
+                            {openCategories[subcategory.subcategory]
+                              ? "−"
+                              : "+"}
                           </span>
                         </div>
                         {openCategories[subcategory.subcategory] && (
@@ -191,14 +225,21 @@ const Filters = ({
                               const subSubcatId = `filter-${subcategory.subcategory}-${subSubcat}`;
                               return (
                                 <div key={subSubcat} className="text-left">
-                                  <label htmlFor={subSubcatId} className="inline-flex items-center">
+                                  <label
+                                    htmlFor={subSubcatId}
+                                    className="inline-flex items-center"
+                                  >
                                     <input
                                       type="checkbox"
                                       id={subSubcatId}
                                       name={subSubcat}
                                       value={subSubcat}
-                                      checked={selectedFilters.includes(subSubcat)}
-                                      onChange={(e) => onFilterChange(e.target.value)}
+                                      checked={selectedFilters.includes(
+                                        subSubcat,
+                                      )}
+                                      onChange={(e) =>
+                                        onFilterChange(e.target.value)
+                                      }
                                       className="form-checkbox"
                                     />
                                     <span className="ml-2">{subSubcat}</span>
@@ -232,10 +273,10 @@ Filters.propTypes = {
           PropTypes.shape({
             subcategory: PropTypes.string.isRequired,
             subSubcategories: PropTypes.arrayOf(PropTypes.string),
-          })
+          }),
         ),
       ]).isRequired,
-    })
+    }),
   ),
   selectedFilters: PropTypes.arrayOf(PropTypes.string).isRequired,
   onFilterChange: PropTypes.func.isRequired,

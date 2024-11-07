@@ -103,27 +103,33 @@ const Rate = () => {
           openCategory={openCategory} // Passer la catégorie ouverte
           onCategoryChange={handleCategoryChange} // Gérer l'ouverture de la catégorie
         />
-        <div className="hidden md:block max-h-24 md:max-h-full w-full rounded-lg border-[0.5px] border-zinc-200 p-1 md:mt-5 md:p-4">
-          <p className="text-sm md:text-base text-gray-700 md:mb-2">
+        <div className="hidden max-h-24 w-full rounded-lg border-[0.5px] border-zinc-200 p-1 md:mt-5 md:block md:max-h-full md:p-4">
+          <p className="text-sm text-gray-700 md:mb-2 md:text-base">
             Si la réparation qui vous intéresse ne figure pas dans notre liste,
             vous pouvez demander un
           </p>
-          <Link to="/quote" className="inline-block font-semibold text-blue-500 transition-colors duration-200 hover:text-blue-700 hover:cursor-pointer md:mt-6">
+          <Link
+            to="/quote"
+            className="inline-block font-semibold text-blue-500 transition-colors duration-200 hover:cursor-pointer hover:text-blue-700 md:mt-6"
+          >
             devis personnalisé
           </Link>
         </div>
       </div>
       <ListRates ratesData={filteredRates} selectedFilters={selectedFilters} />{" "}
       {/* Passer les annonces ici */}
-      <div className="md:hidden max-h-full w-full rounded-lg border-[0.5px] border-zinc-200 mt-5 p-4">
-          <p className="text-base text-gray-700 font-semibold mb-2">
-            Si la réparation qui vous intéresse ne figure pas dans notre liste,
-            vous pouvez demander un
-          </p>
-          <Link to="/quote" className="inline-block font-semibold text-blue-500 transition-colors duration-200 hover:text-blue-700 hover:cursor-pointer mt-6">
-            devis personnalisé
-          </Link>
-        </div>
+      <div className="mt-5 max-h-full w-full rounded-lg border-[0.5px] border-zinc-200 p-4 md:hidden">
+        <p className="mb-2 text-base font-semibold text-gray-700">
+          Si la réparation qui vous intéresse ne figure pas dans notre liste,
+          vous pouvez demander un
+        </p>
+        <Link
+          to="/quote"
+          className="mt-6 inline-block font-semibold text-blue-500 transition-colors duration-200 hover:cursor-pointer hover:text-blue-700"
+        >
+          devis personnalisé
+        </Link>
+      </div>
       <ScrollToTopButton />
     </div>
   );

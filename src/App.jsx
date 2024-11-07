@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import {Routes, Route, Navigate, useLocation } from "react-router-dom";
+import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 
 import ScrollTopNavigate from "./components/ScrollTopNavigate";
 import Loader from "./components/Loader";
@@ -24,25 +24,25 @@ function App() {
     return () => clearTimeout(timer);
   }, [location]);
 
-
   return (
-      <div className="m-0 flex h-auto w-full flex-col items-center text-center">
-        <ScrollTopNavigate />
-        <Header />
-        {isLoading ? (
-          <Loader />
-        ) : (
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/ad" element={<Ad />} />
-            <Route path="/quote" element={<Quote />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/rates" element={<Rates />} />
-            <Route path="*" element={<Navigate to="/" />} />
-          </Routes>
-        )}
-        {!isLoading && <Footer />} {/* Footer ne s'affiche qu'une fois le chargement terminé */}
-      </div>
+    <div className="m-0 flex h-auto w-full flex-col items-center text-center">
+      <ScrollTopNavigate />
+      <Header />
+      {isLoading ? (
+        <Loader />
+      ) : (
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/ad" element={<Ad />} />
+          <Route path="/quote" element={<Quote />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/rates" element={<Rates />} />
+          <Route path="*" element={<Navigate to="/" />} />
+        </Routes>
+      )}
+      {!isLoading && <Footer />}{" "}
+      {/* Footer ne s'affiche qu'une fois le chargement terminé */}
+    </div>
   );
 }
 

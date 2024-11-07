@@ -17,7 +17,9 @@ const CardAD = ({ title, description, price, image, url }) => {
         <p className="line-clamp-2 text-left text-xs text-gray-700 lg:text-base">
           {description}
         </p>
-        <p className="font-semibold text-sm md:text-base lg:text-lg">{price}€</p>
+        <p className="text-sm font-semibold md:text-base lg:text-lg">
+          {price}€
+        </p>
       </div>
       <div className="px-2 pb-3">
         <a
