@@ -13,8 +13,8 @@ const Header = () => {
   };
 
   return (
-    <header className="h-auto w-full header-border-gradient">
-      <div className="flex h-auto w-full flex-row justify-between p-2">
+    <header className="h-auto w-full relative ">
+      <div className="flex h-auto w-full flex-row justify-between p-2 header-border-gradient">
         <section className="flex h-full">
           <div className="flex items-center justify-center gap-2">
             <img
