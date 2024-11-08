@@ -30,17 +30,17 @@
 
 .header-border-gradient {
   position: relative;
-  padding-bottom: 4px; /* Espace pour la fausse bordure */
+  padding-bottom: 8px; /* Espace pour la fausse bordure */
 }
 
 .header-border-gradient::before {
   content: "";
   position: absolute;
-  bottom: 0;
+  bottom: 0px;
   left: 0;
   width: 100%;
   height: 0.6px; /* Épaisseur de la fausse bordure */
-  background: linear-gradient(to right, white 10%, #9ca3af 50%, white 90%);
+  background: linear-gradient(to right, white 5%, #9ca3af 50%, white 95%);
   z-index: 1; /* Place la bordure au-dessus de l'ombre */
 }
 
@@ -50,7 +50,7 @@
   bottom: -2px; /* Place l'ombre juste en dessous de la fausse bordure */
   left: 0;
   width: 100%;
-  height: 1px; /* Hauteur de l'ombre */
+  height: 2px; /* Hauteur de l'ombre */
   background: linear-gradient(to right, rgba(255, 255, 255, 0) 10%, rgba(0, 0, 0, 0.3) 50%, rgba(255, 255, 255, 0) 90%);
   filter: blur(2px); /* Ajoute du flou pour l'effet d'ombre */
   z-index: 0; /* Place l'ombre derrière la bordure */
