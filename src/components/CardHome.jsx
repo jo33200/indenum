@@ -83,7 +83,7 @@ const CardList = () => {
   // Retourne la liste des cartes
   return (
     <div className="flex justify-center">
-      <div className="grid max-w-screen-lg grid-cols-1 gap-6 pb-10 sm:grid-cols-2 lg:grid-cols-3 lg:gap-10 lg:pb-[60px]">
+      <div className="grid max-w-screen-lg grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-10">
         {cardData.map((card, index) => (
           <Card
             key={index}
