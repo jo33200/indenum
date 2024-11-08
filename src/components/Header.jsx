@@ -9,7 +9,7 @@ const Header = () => {
   const getLinkClass = (path) => {
     return `${
       location.pathname === path ? "scale-125" : ""
-    } transition-transform duration-200 hover:scale-110 font-semibold text-black`;
+    } transition-transform duration-200 hover:scale-110 font-semibold text-gray-500`;
   };
 
   return (
@@ -45,13 +45,13 @@ const Header = () => {
               <li>
               <a
                 href="mailto:indenum@outlook.com"
-                className="hover:cursor-pointer"
+                className="hover:cursor-pointer text-gray-500"
               >
                 <FontAwesomeIcon icon={faEnvelope} className="" />
               </a>
             </li>
             <li>
-              <FontAwesomeIcon icon={faPhone} className="" />
+              <FontAwesomeIcon icon={faPhone} className="text-gray-500" />
             </li>
             </ul>
           </nav>
