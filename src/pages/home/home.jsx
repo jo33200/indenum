@@ -3,9 +3,14 @@ import CardHome from "../../components/CardHome";
 import Atelier from "../../assets/img/atelier.jpg";
 import Proximite from "../../assets/img/proximite.jpg";
 import { Link } from "react-router-dom";
+import { useState } from "react";
+import CityModal from "../../components/ModalCity";
 
 
 const HomePage = () => {
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
     <div className="h-auto w-full flex flex-col items-center">
       <section className="w-full flex justify-center items-center">
@@ -62,9 +67,24 @@ const HomePage = () => {
             <p>
               Pour faciliter la réparation de vos appareils, nous proposons <strong>un service de proximité</strong> :<br/> notre équipe vient directement à <strong>votre domicile</strong> pour récupérer votre matériel endommagé, puis vous le <strong>ramène</strong> une fois la réparation effectuée.<br/> <strong>Plus besoin de vous déplacer</strong> !<br/> Nous couvrons un large périmètre pour vous offrir un service simple et rapide.
             </p>
-            <p>
-            Cliquez ici pour consulter la liste des communes desservies
-            </p>
+            <div>
+              <p>
+                Cliquez ici pour consulter la liste des communes desservies
+              </p>
+              <div>
+                <button
+                  onClick={() => setIsModalOpen(true)}
+                  className="text-blue-500 underline"
+                >
+                  Voir la liste des communes
+                </button>
+
+                <CityModal
+                  isOpen={isModalOpen}
+                  onClose={() => setIsModalOpen(false)}
+                />
+              </div>
+            </div>
             <p>
               prendre rendez-vous dès aujourd’hui.
             </p>
