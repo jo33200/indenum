@@ -38,7 +38,7 @@ const Carousel = () => {
   }, []);
 
   return (
-    <div className="relative flex h-40 w-full items-center justify-center">
+    <div className="relative flex h-24 w-full items-center justify-center">
       {/* Slogans */}
       {slogans.map((slogan, index) => (
         <p
@@ -47,7 +47,7 @@ const Carousel = () => {
             index === currentIndex ? "opacity-100" : "opacity-0"
           }`}
           style={{
-            fontSize: "26px",
+            fontSize: "32px",
             width: "100%",
             padding: "0 20px",
           }}
