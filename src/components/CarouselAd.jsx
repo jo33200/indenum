@@ -50,7 +50,7 @@ const CarouselAd = ({ ads }) => {
 
       {/* Cartes des annonces visibles */}
       <div className="flex space-x-4 overflow-hidden">
-        {visibleAds.map((ad, index) => (
+        {visibleAds.map((ad) => (
           <div key={ad.title} className={`w-full flex-1 transition-all ease-in-out`}>
             <CardAdHome ad={ad} />
           </div>
