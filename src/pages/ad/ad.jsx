@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import ListAd from "../../components/CardAd";
+import ListAd from "../../components/ListAd.jsx";
 import Filters from "../../components/filters";
 import ScrollToTopButton from "../../components/ScrollToTopButton.jsx";
 import adsDataJson from "../../data/ad.json";
