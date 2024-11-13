@@ -95,7 +95,7 @@ const HomePage = () => {
         </article>
         <article className="w-full flex flex-col items-center gap-10">
           <CarouselAd ads={adData} />
-          <Link to="/ad" className="mt-5 text-blue-500 underline">
+          <Link to="/ad" className="rounded bg-name-orange px-4 py-2 text-xs font-bold text-white hover:bg-blue-700">
             Voir toutes les annonces
           </Link>
         </article>
