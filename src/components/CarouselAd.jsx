@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
-import CardAdHome from "./CardAdHome";
+import CardAd from "./CardAd";
+import imgDefault from "../assets/img/imgDefault.jpg";
 
 const CarouselAd = ({ ads }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -39,7 +40,7 @@ const CarouselAd = ({ ads }) => {
   }
 
   return (
-    <div className="relative mx-auto w-full max-w-3xl p-4">
+    <div className="relative mx-auto w-full max-w-[850px] p-4">
       {/* Bouton pour aller à l'annonce précédente */}
       <button
         className="absolute left-0 top-1/2 -translate-y-1/2 transform rounded-full bg-gray-200 p-2 shadow-md hover:bg-gray-300 focus:outline-none"
@@ -50,10 +51,16 @@ const CarouselAd = ({ ads }) => {
 
       {/* Cartes des annonces visibles */}
       <div className="flex space-x-4 overflow-hidden">
-        {visibleAds.map((ad) => (
-          <div key={ad.title} className={`w-full flex-1 transition-all ease-in-out`}>
-            <CardAdHome ad={ad} />
-          </div>
+        {visibleAds.map((ad, index) => (
+          <div key={index} className={`w-full flex-1 transition-all ease-in-out`}>
+          <CardAd
+            title={ad.title || "Titre indisponible"}
+            description={ad.description || "Description non disponible"}
+            price={ad.price || "Prix non disponible"}
+            image={ad.image || {imgDefault}} // Image par défaut
+            url={ad.url || "#"}
+          />
+        </div>
         ))}
       </div>
 
