@@ -12,7 +12,7 @@ const HomePage = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
-    <div className="flex h-auto w-full flex-col items-center">
+    <div className="flex h-auto w-full flex-col items-center py-20">
       {/* Carousel Section */}
       <section className="w-full flex items-center justify-center">
         <Carousel />
