@@ -55,7 +55,7 @@ const RequestQuote = () => {
   };
 
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center p-6">
+    <div className="flex flex-col items-center justify-center p-6">
       <h1 className="mb-4 text-center text-3xl font-bold">Demandez un Devis</h1>
       <p className="mb-8 text-center text-gray-600">
         Remplissez le formulaire ci-dessous pour obtenir un devis rapide.
