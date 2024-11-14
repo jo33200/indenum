@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
+import React, { useEffect, useState } from "react";
+import imgDefault from "../../assets/img/imgDefault.jpg";
 import CardAd from "./CardAd";
-import imgDefault from "../assets/img/imgDefault.jpg";
 
 const CarouselAd = ({ ads }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -29,7 +29,7 @@ const CarouselAd = ({ ads }) => {
 
   const prevSlide = () => {
     setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? ads.length - 1 : prevIndex - 1
+      prevIndex === 0 ? ads.length - 1 : prevIndex - 1,
     );
   };
 
@@ -52,15 +52,18 @@ const CarouselAd = ({ ads }) => {
       {/* Cartes des annonces visibles */}
       <div className="flex space-x-4 overflow-hidden">
         {visibleAds.map((ad, index) => (
-          <div key={index} className={`w-full flex-1 transition-all ease-in-out`}>
-          <CardAd
-            title={ad.title || "Titre indisponible"}
-            description={ad.description || "Description non disponible"}
-            price={ad.price || "Prix non disponible"}
-            image={ad.image || {imgDefault}} // Image par défaut
-            url={ad.url || "#"}
-          />
-        </div>
+          <div
+            key={index}
+            className={`w-full flex-1 transition-all ease-in-out`}
+          >
+            <CardAd
+              title={ad.title || "Titre indisponible"}
+              description={ad.description || "Description non disponible"}
+              price={ad.price || "Prix non disponible"}
+              image={ad.image || { imgDefault }} // Image par défaut
+              url={ad.url || "#"}
+            />
+          </div>
         ))}
       </div>
 

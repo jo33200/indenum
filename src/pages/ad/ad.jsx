@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import ListAd from "../../components/ListAd.jsx";
-import Filters from "../../components/filters";
-import ScrollToTopButton from "../../components/ScrollToTopButton.jsx";
+import ListAd from "../../components/pages/ListAd.jsx";
+import Filters from "../../components/common/filters";
+import ScrollToTopButton from "../../components/ui/ScrollToTopButton.jsx";
 import adsDataJson from "../../data/ad.json";
 
 const Ad = () => {

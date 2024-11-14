@@ -61,7 +61,7 @@ ListAd.propTypes = {
       price: PropTypes.string.isRequired,
       image: PropTypes.string.isRequired,
       url: PropTypes.string.isRequired,
-    })
+    }),
   ).isRequired,
   selectedFilters: PropTypes.arrayOf(PropTypes.string).isRequired,
 };

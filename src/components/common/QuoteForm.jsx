@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import ButtonValid from "./ButtonValid";
+import ButtonValid from "../ui/ButtonValid";
 import emailjs from "emailjs-com";
 
 const RequestQuote = () => {

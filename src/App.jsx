@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
+import Header from "./components/layout/Header";
+import Footer from "./components/layout/Footer";
 import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 
-import ScrollTopNavigate from "./components/ScrollTopNavigate";
-import Loader from "./components/Loader";
+import ScrollTopNavigate from "./components/ui/ScrollTopNavigate";
+import Loader from "./components/ui/Loader";
 
 import Home from "./pages/home/home";
 import Ad from "./pages/ad/ad";

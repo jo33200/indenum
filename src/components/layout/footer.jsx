@@ -1,5 +1,5 @@
-import Logo from "../assets/img/Indenum.png";
-import ContactInfo from "./ContactInfo";
+import Logo from "../../assets/img/Indenum.png";
+import ContactInfo from "../common/ContactInfo";
 
 const Footer = () => {
   return (

@@ -2,7 +2,7 @@ import { faEnvelope, faPhone, faBars, faTimes } from "@fortawesome/free-solid-sv
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link, useLocation } from "react-router-dom";
 import { useState } from "react";
-import Logo from "../assets/img/Indenum.png";
+import Logo from "../../assets/img/Indenum.png";
 
 const Header = () => {
   const location = useLocation();

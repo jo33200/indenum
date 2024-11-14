@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import ContactMap from "./ContactMap";
+import ContactMap from "../common/ContactMap";
 
 const ContactInfo = ({ isFooter = false }) => (
   <div className={isFooter ? "" : "mx-auto flex max-w-lg flex-col gap-10 p-8"}>
