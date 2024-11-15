@@ -4,7 +4,9 @@ import emailjs from "emailjs-com";
 
 const RequestQuote = () => {
   const [contactData, setContactData] = useState({
+    civility: "",
     name: "",
+    firstname: "",
     email: "",
     phone: "",
     deviceType: "",
@@ -42,7 +44,9 @@ const RequestQuote = () => {
       .then(() => {
         alert("Votre message a bien été envoyé !");
         setContactData({
+          civility: "",
           name: "",
+          firstname: "",
           email: "",
           phone: "",
           deviceType: "",
@@ -61,6 +65,26 @@ const RequestQuote = () => {
         Remplissez le formulaire ci-dessous pour obtenir un devis rapide.
       </p>
       <form className="w-full max-w-lg rounded-lg bg-white p-8 shadow-md">
+        <div className="mb-4">
+          <label className="mb-2 block text-gray-700" htmlFor="civility">
+            Civilité
+          </label>
+          <select
+            id="civility"
+            name="civility"
+            value={contactData.civility}
+            onChange={handleChange}
+            className="w-full rounded-md border border-gray-300 p-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            autoComplete="honorific-prefix"
+            required
+          >
+            <option value=""></option>
+            <option value="Monsieur">Monsieur</option>
+            <option value="Madame">Madame</option>
+            <option value="Autres">Autres</option>
+          </select>
+        </div>
+
         {/* Nom */}
         <div className="mb-4">
           <label className="mb-2 block text-gray-700" htmlFor="name">
@@ -73,8 +97,29 @@ const RequestQuote = () => {
             value={contactData.name}
             onChange={handleChange}
             className="w-full rounded-md border border-gray-300 p-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            placeholder="Entrez votre nom"
             required
-            autoComplete="name"
+            autoComplete="family-name"
+          />
+        </div>
+
+        <div className="mb-4">
+          <label
+            htmlFor="name"
+            className="mb-1 block font-semibold text-gray-700"
+          >
+            Votre prénom
+          </label>
+          <input
+            type="text"
+            id="firstname"
+            name="firstname"
+            value={contactData.firstname}
+            onChange={handleChange}
+            className="w-full rounded-md border border-gray-300 p-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            placeholder="Entrez votre prénom"
+            required
+            autoComplete="given-name"
           />
         </div>
 
@@ -90,6 +135,7 @@ const RequestQuote = () => {
             value={contactData.email}
             onChange={handleChange}
             className="w-full rounded-md border border-gray-300 p-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            placeholder="Entrez votre adresse email"
             required
             autoComplete="email"
           />
@@ -107,6 +153,7 @@ const RequestQuote = () => {
             value={contactData.phone}
             onChange={handleChange}
             className="w-full rounded-md border border-gray-300 p-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            placeholder="Entrez votre numéro de téléphone"
             required
             autoComplete="tel"
           />
@@ -175,6 +222,7 @@ const RequestQuote = () => {
                 value={contactData.model}
                 onChange={handleChange}
                 className="w-full rounded-md border border-gray-300 p-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                placeholder="Entrez le modèle de votre appareil"
                 required
                 autoComplete="text"
               />
@@ -193,6 +241,7 @@ const RequestQuote = () => {
             onChange={handleChange}
             rows="4"
             className="w-full rounded-md border border-gray-300 p-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            placeholder="décrivez votre problème ici"
             required
           ></textarea>
         </div>
