@@ -48,7 +48,7 @@ const HomePage = () => {
           Service de proximité : Prise en charge et livraison à domicile
         </h2>
         <article className="flex flex-col sm:flex-row max-w-[850px] items-center gap-10 text-left">
-          <div className="flex flex-col gap-10">
+          <div className="flex flex-col gap-10 text-lg">
             <p>
               Pour faciliter la réparation de vos appareils, nous proposons <strong>un service de proximité</strong> :<br />
               notre équipe vient directement à <strong>votre domicile</strong> pour récupérer votre matériel endommagé, puis vous le <strong>ramène</strong> une fois la réparation effectuée.
@@ -77,7 +77,7 @@ const HomePage = () => {
       </section>
 
       {/* Blockquote Section */}
-      <section className="w-full flex flex-col items-center gap-10 py-20">
+      <section className="w-full flex flex-col items-center gap-10 py-20 bg-gray-100">
         <blockquote className="max-w-[850px] text-center text-2xl font-bold">
           <p>
             Faites le choix de la qualité, de la fiabilité et de la réactivité : laissez-nous vous accompagner pour retrouver des appareils comme neufs.
@@ -88,15 +88,15 @@ const HomePage = () => {
       {/* CarouselAnnonces Section */}
       <section className="w-full flex flex-col items-center gap-10 py-20">
         <h2 className="text-xl font-bold">Nos dernières annonces</h2>
-        <article className="w-full max-w-[850px] items-center gap-10">
+        <article className="w-full max-w-[850px] items-center gap-10 text-lg">
           <p>
-            Vous recherchez des appareils et accessoires d’occasion ? Parcourez nos annonces mises à jour sur Le Bon Coin, directement accessibles depuis notre site pour dénicher des produits au meilleur rapport qualité-prix.
+            Vous recherchez des appareils et accessoires d’occasion?<br/> Parcourez nos annonces mises à jour sur Le Bon Coin, directement accessibles depuis notre site pour dénicher des produits au meilleur rapport qualité-prix.
           </p>
         </article>
         <article className="w-full flex flex-col items-center gap-10">
           <CarouselAd ads={adData} />
-          <Link to="/ad" className="rounded bg-name-orange px-4 py-2 text-xs font-bold text-white hover:bg-blue-700">
-            Voir toutes les annonces
+          <Link to="/ad" className="rounded-lg bg-name-orange px-5 py-4 text-lg font-bold text-white hover:bg-blue-700">
+            Voir toutes nos annonces
           </Link>
         </article>
       </section>
