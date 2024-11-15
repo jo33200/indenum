@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import ListRates from "../../components/pages/CardRate";
+import ListRates from "../../components/pages/ListRates";
 import ScrollToTopButton from "../../components/ui/ScrollToTopButton";
 import Filters from "../../components/common/filters";
 import RatesData from "../../data/rate.json";
