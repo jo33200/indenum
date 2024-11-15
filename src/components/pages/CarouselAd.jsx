@@ -13,8 +13,10 @@ const CarouselAd = ({ ads }) => {
       if (window.innerWidth >= 1024) {
         setCardsToShow(3); // Desktop
       } else if (window.innerWidth >= 768) {
-        setCardsToShow(2); // Tablet
-      } else {
+        setCardsToShow(3); // Tablet
+      }else if (window.innerWidth >= 450) {
+        setCardsToShow(2); // Big mobile
+      }else {
         setCardsToShow(1); // Mobile
       }
     };
