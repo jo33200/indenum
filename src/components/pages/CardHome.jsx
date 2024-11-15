@@ -53,10 +53,10 @@ const CardList = () => {
   const Card = ({ title, image, subtitle, link, filter }) => {
     const handleAnchorClick = (event) => {
       if (link.startsWith("#")) {
-        event.preventDefault(); // Empêche le rechargement de la page
-        const targetElement = document.querySelector(link); // Trouve la section cible
+        event.preventDefault();
+        const targetElement = document.querySelector(link);
         if (targetElement) {
-          targetElement.scrollIntoView({ behavior: "smooth" }); // Défilement fluide
+          targetElement.scrollIntoView({ behavior: "smooth" });
         }
       }
     };
