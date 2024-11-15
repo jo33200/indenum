@@ -1,5 +1,7 @@
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import CardRate from "./CardRate";
+import ModalRate from "./ModalRate";
 
 // Fonction pour extraire et convertir le prix depuis une chaîne comme "30€"
 const extractPrice = (priceStr) => {
@@ -7,6 +9,9 @@ const extractPrice = (priceStr) => {
 };
 
 const ListRates = ({ ratesData, selectedFilters }) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedRate, setSelectedRate] = useState(null);
+
   const filterRates = (rates) => {
     return rates.filter((rate) => {
       let matchesPrice = true;
@@ -22,7 +27,7 @@ const ListRates = ({ ratesData, selectedFilters }) => {
         matchesPrice = extractPrice(rate.price) > 30;
       }
 
-      // Vous pouvez ajouter d'autres conditions de filtrage, comme les catégories
+      // Filtrage sur la catégorie
       if (selectedFilters.includes("Manette")) {
         matchesCategory = rate.categories.some((category) =>
           category.subcategories.includes("Manette"),
@@ -35,23 +40,43 @@ const ListRates = ({ ratesData, selectedFilters }) => {
 
   const filteredRates = filterRates(ratesData);
 
+  const openModal = (rate) => {
+    setSelectedRate(rate);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setSelectedRate(null);
+  };
+
   return (
-    <div className="item-center grid w-full max-w-[1144px] grid-cols-2 justify-center gap-5 sm:grid-cols-3 sm:justify-between sm:gap-3 lg:w-7/12 lg:gap-3 xl:w-auto xl:grid-cols-4 xl:gap-10">
-      {" "}
-      {/* Utilise un grid layout */}
-      {filteredRates.length > 0 ? (
-        filteredRates.map((rate) => (
-          <CardRate
-            key={rate.title}
-            title={rate.title}
-            category={rate.category}
-            description={rate.description}
-            price={rate.price}
-            image={rate.image}
-          />
-        ))
-      ) : (
-        <p className="w-[256px]">Aucune résultat dans la recherche.</p>
+    <div>
+      <div className="item-center grid w-full max-w-[1144px] grid-cols-2 justify-center gap-5 sm:grid-cols-3 sm:justify-between sm:gap-3 lg:w-7/12 lg:gap-3 xl:w-auto xl:grid-cols-4 xl:gap-10">
+        {filteredRates.length > 0 ? (
+          filteredRates.map((rate) => (
+            <CardRate
+              key={rate.title}
+              title={rate.title}
+              category={rate.category}
+              description={rate.description}
+              price={rate.price}
+              image={rate.image}
+              onClick={() => openModal(rate)} // Ouvre la modale au clic
+            />
+          ))
+        ) : (
+          <p className="w-[256px]">Aucun résultat dans la recherche.</p>
+        )}
+      </div>
+
+      {isModalOpen && selectedRate && (
+        <ModalRate
+          rate={selectedRate}
+          image={selectedRate.image}
+          title={selectedRate.title}
+          onClose={closeModal}
+        />
       )}
     </div>
   );
@@ -65,9 +90,10 @@ ListRates.propTypes = {
       price: PropTypes.string.isRequired,
       image: PropTypes.string,
       category: PropTypes.string.isRequired,
-    }),
+    })
   ).isRequired,
   selectedFilters: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
 export default ListRates;
+
