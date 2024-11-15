@@ -24,7 +24,7 @@ const HomePage = () => {
       </section>
 
       {/* Atelier Section */}
-      <section className="w-full px-2 flex flex-col items-center gap-10 bg-gray-100 py-20">
+      <section id="atelier" className="w-full px-2 flex flex-col items-center gap-10 bg-gray-100 py-20">
         <h2 className="text-xl font-bold">Notre Atelier</h2>
         <article className="flex flex-col-reverse sm:flex-row max-w-[850px] items-center gap-10">
           <img
@@ -43,7 +43,7 @@ const HomePage = () => {
       </section>
 
       {/* Service de proximité Section */}
-      <section className="w-full px-2 flex flex-col items-center gap-10 py-20">
+      <section id="proximite" className="w-full px-2 flex flex-col items-center gap-10 py-20">
         <h2 className="text-xl font-bold text-center sm:text-left">
           Service de proximité : Prise en charge et livraison à domicile
         </h2>

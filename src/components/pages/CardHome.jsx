@@ -14,7 +14,7 @@ const CardList = () => {
       title: "Notre Atelier",
       image: Atelier,
       subtitle: "Découvrir",
-      link: "/rates",
+      link: "#atelier",
     },
     {
       title: "Besoin d'un devis rapide",
@@ -26,7 +26,7 @@ const CardList = () => {
       title: "Service de proximité",
       image: Proximite,
       subtitle: "En savoir plus",
-      link: "/contact",
+      link: "#proximite",
     },
     {
       title: "Nos Annonces en ligne",
@@ -51,6 +51,15 @@ const CardList = () => {
 
   // Composant Card
   const Card = ({ title, image, subtitle, link, filter }) => {
+    const handleAnchorClick = (event) => {
+      if (link.startsWith("#")) {
+        event.preventDefault(); // Empêche le rechargement de la page
+        const targetElement = document.querySelector(link); // Trouve la section cible
+        if (targetElement) {
+          targetElement.scrollIntoView({ behavior: "smooth" }); // Défilement fluide
+        }
+      }
+    };
     return (
       <div className="max-w-sm border bg-white shadow-lg">
         <div className="flex flex-col items-start gap-4 p-3">
@@ -59,13 +68,17 @@ const CardList = () => {
             <img src={image} alt={title} className="h-48 w-full object-cover" />
           </div>
           <h3 className="text-sm font-bold text-gray-400">
-            {filter ? (
-              <Link to={`${link}?filter=${encodeURIComponent(filter)}`}>
-                {subtitle}
-              </Link>
-            ) : (
-              <Link to={link}>{subtitle}</Link>
-            )}
+          {filter ? (
+            <Link to={`${link}?filter=${encodeURIComponent(filter)}`}>
+              {subtitle}
+            </Link>
+          ) : link.startsWith("#") ? (
+            <a href={link} onClick={handleAnchorClick}>
+              {subtitle}
+            </a>
+          ) : (
+            <Link to={link}>{subtitle}</Link>
+          )}
           </h3>
         </div>
       </div>
