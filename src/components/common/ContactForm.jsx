@@ -60,7 +60,27 @@ const ContactForm = () => {
             className="w-full rounded-md border px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
             placeholder="Entrez votre nom"
             required
-            autoComplete="name"
+            autoComplete="family-name"
+          />
+        </div>
+
+        <div className="mb-4">
+          <label
+            htmlFor="name"
+            className="mb-1 block font-semibold text-gray-700"
+          >
+            Votre prénom
+          </label>
+          <input
+            type="text"
+            id="firstname"
+            name="firstname"
+            value={contactData.firstname}
+            onChange={handleChange}
+            className="w-full rounded-md border px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            placeholder="Entrez votre prénom"
+            required
+            autoComplete="given-name"
           />
         </div>
 
@@ -120,7 +140,7 @@ const ContactForm = () => {
             value={contactData.message}
             onChange={handleChange}
             className="w-full rounded-md border px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-            placeholder="Écrivez votre message ici (max. 120 mots)"
+            placeholder="Écrivez votre message ici"
             maxLength="120"
             rows="4"
             required

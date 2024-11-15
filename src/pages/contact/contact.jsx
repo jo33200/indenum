@@ -3,14 +3,14 @@ import ContactInfo from "../../components/common/ContactInfo";
 
 const Contact = () => {
   return (
-    <section className="flex h-auto w-full flex-col items-center justify-center gap-10 lg:flex-row lg:items-start lg:justify-around xl:w-2/3 xl:justify-between">
-      <article className="mt-5 w-full max-w-md">
+    <div className="flex h-auto lg:min-h-screen w-full flex-col items-center justify-center gap-10 lg:flex-row lg:justify-around xl:w-2/3 xl:justify-between">
+      <section className="mt-5 w-full">
         <ContactInfo />
-      </article>
-      <article className="mt-5 w-full max-w-md">
+      </section>
+      <section className="mt-5 w-full">
         <ContactForm />
-      </article>
-    </section>
+      </section>
+    </div>
   );
 };
 
