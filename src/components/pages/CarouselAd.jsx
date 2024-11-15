@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import React, { useEffect, useState } from "react";
+import { HiOutlineChevronLeft, HiOutlineChevronRight } from "react-icons/hi";
 import imgDefault from "../../assets/img/imgDefault.jpg";
 import CardAd from "./CardAd";
 
@@ -40,43 +41,38 @@ const CarouselAd = ({ ads }) => {
   }
 
   return (
-    <div className="relative mx-auto w-full max-w-[850px] p-4">
-      {/* Bouton pour aller à l'annonce précédente */}
-      <button
-        className="absolute left-0 top-1/2 -translate-y-1/2 transform rounded-full bg-gray-200 p-2 shadow-md hover:bg-gray-300 focus:outline-none"
-        onClick={prevSlide}
-      >
-        &#8592; {/* Flèche gauche */}
-      </button>
-
-      {/* Cartes des annonces visibles */}
-      <div className="flex space-x-4 overflow-hidden">
-        {visibleAds.map((ad, index) => (
-          <div
-            key={index}
-            className={`w-full flex-1 transition-all ease-in-out`}
-          >
-            <CardAd
-              title={ad.title || "Titre indisponible"}
-              description={ad.description || "Description non disponible"}
-              price={ad.price || "Prix non disponible"}
-              image={ad.image || { imgDefault }} // Image par défaut
-              url={ad.url || "#"}
-            />
-          </div>
-        ))}
+    <div className="mx-auto flex w-full max-w-[850px] flex-col items-center space-y-4">
+      <div className="flex w-full items-center justify-between">
+        <button
+          className="rounded-full p-3 shadow-md hover:bg-gray-300 focus:outline-none"
+          onClick={prevSlide}
+        >
+          <HiOutlineChevronLeft className="text-2xl" />
+        </button>
+        <div className="flex flex-1 space-x-4 overflow-hidden p-6">
+          {visibleAds.map((ad, index) => (
+            <div
+              key={index}
+              className={`w-full flex-1 transition-all ease-in-out`}
+            >
+              <CardAd
+                title={ad.title || "Titre indisponible"}
+                description={ad.description || "Description non disponible"}
+                price={ad.price || "Prix non disponible"}
+                image={ad.image || { imgDefault }}
+                url={ad.url || "#"}
+              />
+            </div>
+          ))}
+        </div>
+        <button
+          className="rounded-full p-3 shadow-md hover:bg-gray-300 focus:outline-none"
+          onClick={nextSlide}
+        >
+          <HiOutlineChevronRight className="text-2xl" />
+        </button>
       </div>
-
-      {/* Bouton pour aller à l'annonce suivante */}
-      <button
-        className="absolute right-0 top-1/2 -translate-y-1/2 transform rounded-full bg-gray-200 p-2 shadow-md hover:bg-gray-300 focus:outline-none"
-        onClick={nextSlide}
-      >
-        &#8594; {/* Flèche droite */}
-      </button>
-
-      {/* Indicateurs pour chaque annonce */}
-      <div className="mt-4 flex justify-center space-x-2">
+      <div className="flex space-x-2">
         {ads.map((_, index) => (
           <span
             key={index}
