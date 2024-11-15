@@ -61,24 +61,30 @@ const CardList = () => {
       }
     };
     return (
-      <div className="max-w-sm border bg-white shadow-lg">
+      <div className="max-w-[280px] border bg-white shadow-lg">
         <div className="flex flex-col items-start gap-4 p-3">
           <h2 className="text-xl font-bold">{title}</h2>
-          <div className="container w-56">
-            <img src={image} alt={title} className="h-48 w-full object-cover" />
-          </div>
+          <Link to={link} onClick={handleAnchorClick} className="w-full">
+            <div className="container w-full">
+              <img
+                src={image}
+                alt={title}
+                className="h-48 w-full object-cover"
+              />
+            </div>
+          </Link>
           <h3 className="text-sm font-bold text-gray-400">
-          {filter ? (
-            <Link to={`${link}?filter=${encodeURIComponent(filter)}`}>
-              {subtitle}
-            </Link>
-          ) : link.startsWith("#") ? (
-            <a href={link} onClick={handleAnchorClick}>
-              {subtitle}
-            </a>
-          ) : (
-            <Link to={link}>{subtitle}</Link>
-          )}
+            {filter ? (
+              <Link to={`${link}?filter=${encodeURIComponent(filter)}`}>
+                {subtitle}
+              </Link>
+            ) : link.startsWith("#") ? (
+              <a href={link} onClick={handleAnchorClick}>
+                {subtitle}
+              </a>
+            ) : (
+              <Link to={link}>{subtitle}</Link>
+            )}
           </h3>
         </div>
       </div>
