@@ -1,12 +1,20 @@
-import { faEnvelope, faPhone, faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
+import {
+  faBars,
+  faEnvelope,
+  faPhone,
+  faTimes,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Link, useLocation } from "react-router-dom";
 import { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import Logo from "../../assets/img/Indenum.png";
+import Modal from "../ui/ModalPhone";
 
 const Header = () => {
   const location = useLocation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const phoneNumber = "07 66 44 13 37";
 
   const getLinkClass = (path) => {
     return `${
@@ -18,9 +26,23 @@ const Header = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const handlePhoneClick = () => {
+    if (window.innerWidth < 768) {
+      // Mobile : passe directement l'appel
+      window.location.href = `tel:${phoneNumber.replace(/\s+/g, "")}`;
+    } else {
+      // Ordinateur/Tablet : affiche la modale
+      setIsModalOpen(true);
+    }
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
   return (
-    <header className="relative h-auto w-full z-50 bg-white">
-      <div className="header-border-gradient flex h-auto w-full flex-row items-center justify-between px-4 lg:px-10 py-2">
+    <header className="relative z-50 h-auto w-full bg-white">
+      <div className="header-border-gradient flex h-auto w-full flex-row items-center justify-between px-4 py-2 lg:px-10">
         <section className="flex h-full">
           <div className="flex items-center justify-center gap-2">
             <img src={Logo} alt="Indenum" className="h-auto w-52" />
@@ -30,7 +52,7 @@ const Header = () => {
         {/* Menu de navigation */}
         <section className="hidden md:flex">
           <nav className="mt-2 w-full">
-            <ul className="flex w-full items-center justify-center md:gap-5 text-sm md:w-auto lg:gap-10 md:text-base">
+            <ul className="flex w-full items-center justify-center text-sm md:w-auto md:gap-5 md:text-base lg:gap-10">
               <li className={getLinkClass("/")}>
                 <Link to="/">Accueil</Link>
               </li>
@@ -55,7 +77,12 @@ const Header = () => {
                 </a>
               </li>
               <li>
-                <FontAwesomeIcon icon={faPhone} className="text-gray-500" />
+                <button
+                  onClick={handlePhoneClick}
+                  className="text-gray-500 focus:outline-none"
+                >
+                  <FontAwesomeIcon icon={faPhone} />
+                </button>
               </li>
             </ul>
           </nav>
@@ -63,7 +90,10 @@ const Header = () => {
 
         {/* Icône de menu burger pour petits écrans */}
         <section className="flex md:hidden">
-          <button onClick={toggleMenu} className="text-gray-500 focus:outline-none">
+          <button
+            onClick={toggleMenu}
+            className="text-gray-500 focus:outline-none"
+          >
             <FontAwesomeIcon icon={isMenuOpen ? faTimes : faBars} size="lg" />
           </button>
         </section>
@@ -79,22 +109,38 @@ const Header = () => {
               </Link>
             </li>
             <li className="py-2">
-              <Link to="/rates" onClick={toggleMenu} className={getLinkClass("/rates")}>
+              <Link
+                to="/rates"
+                onClick={toggleMenu}
+                className={getLinkClass("/rates")}
+              >
                 Tarifs
               </Link>
             </li>
             <li className="py-2">
-              <Link to="/ad" onClick={toggleMenu} className={getLinkClass("/ad")}>
+              <Link
+                to="/ad"
+                onClick={toggleMenu}
+                className={getLinkClass("/ad")}
+              >
                 Annonces
               </Link>
             </li>
             <li className="py-2">
-              <Link to="/quote" onClick={toggleMenu} className={getLinkClass("/quote")}>
+              <Link
+                to="/quote"
+                onClick={toggleMenu}
+                className={getLinkClass("/quote")}
+              >
                 Devis
               </Link>
             </li>
             <li className="py-2">
-              <Link to="/contact" onClick={toggleMenu} className={getLinkClass("/contact")}>
+              <Link
+                to="/contact"
+                onClick={toggleMenu}
+                className={getLinkClass("/contact")}
+              >
                 Contact
               </Link>
             </li>
@@ -108,11 +154,24 @@ const Header = () => {
               </a>
             </li>
             <li className="py-2">
-              <FontAwesomeIcon icon={faPhone} className="text-gray-500" />
+              <button
+                onClick={handlePhoneClick}
+                className="text-gray-500 focus:outline-none"
+              >
+                <FontAwesomeIcon icon={faPhone} />
+              </button>
             </li>
           </ul>
         </nav>
       )}
+      <Modal isOpen={isModalOpen} onClose={closeModal} title="Contactez-nous">
+        <p className="text-gray-700 my-5">
+          Pour toutes demande d’information, N’hésitez pas à nous contacter au numéro suivant :
+        </p>
+        <p className="text-gray-700">{phoneNumber}</p>
+        <p className="text-gray-700 mt-5">Nous sommes joignable du lundi au Samedi</p>
+        <p className="text-gray-700 mb-9">de 9h à 19h.</p>
+      </Modal>
     </header>
   );
 };
