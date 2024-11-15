@@ -1,9 +1,9 @@
 import PropTypes from "prop-types";
 import images from "../../assets/images";
 
-const CardRate = ({ title, description, category, price, image }) => {
+const CardRate = ({ title, description, category, price, image, onClick }) => {
   return (
-    <div className="flex h-auto w-full flex-col items-start justify-between rounded border border-gray-300 bg-white shadow-lg xl:max-w-64 xl:gap-5 xl:pb-3">
+    <div onClick={onClick} className="cursor-pointer flex h-auto w-full flex-col items-start justify-between rounded border border-gray-300 bg-white shadow-lg xl:max-w-64 xl:gap-5 xl:pb-3">
       <div className="flex h-32 w-full items-center justify-center">
         <img
           src={images[image]}
@@ -33,6 +33,8 @@ CardRate.propTypes = {
   category: PropTypes.string.isRequired,
   price: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
+  onClick: PropTypes.func.isRequired,
 };
+
 
 export default CardRate;
