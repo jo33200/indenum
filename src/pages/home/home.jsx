@@ -24,7 +24,7 @@ const HomePage = () => {
       </section>
 
       {/* Atelier Section */}
-      <section className="w-full flex flex-col items-center gap-10 bg-gray-100 py-20">
+      <section className="w-full px-2 flex flex-col items-center gap-10 bg-gray-100 py-20">
         <h2 className="text-xl font-bold">Notre Atelier</h2>
         <article className="flex flex-col-reverse sm:flex-row max-w-[850px] items-center gap-10">
           <img
@@ -32,7 +32,7 @@ const HomePage = () => {
             alt="Atelier"
             className="w-full sm:w-1/2 rounded-3xl"
           />
-          <p className="text-lg text-left">
+          <p className="text-lg px-2 text-left">
             Bienvenue sur votre <strong>espace de confiance</strong> pour la réparation de <strong>smartphones</strong>, <strong>tablettes</strong>, <strong>consoles de jeux</strong> et <strong>accessoires</strong> !
             <br /> Avec notre expertise, redonnez vie à vos appareils préférés <strong>sans compromis</strong> sur la qualité ni le prix.
             <br /> Nous savons à quel point votre technologie est essentielle au quotidien, c’est pourquoi nous proposons des <strong>réparations rapides</strong> et <strong>soignées</strong>, réalisées par des experts passionnés, quel que soit le <strong>modèle</strong> ou la <strong>marque</strong>.
@@ -43,12 +43,12 @@ const HomePage = () => {
       </section>
 
       {/* Service de proximité Section */}
-      <section className="w-full flex flex-col items-center gap-10 py-20">
+      <section className="w-full px-2 flex flex-col items-center gap-10 py-20">
         <h2 className="text-xl font-bold text-center sm:text-left">
           Service de proximité : Prise en charge et livraison à domicile
         </h2>
         <article className="flex flex-col sm:flex-row max-w-[850px] items-center gap-10 text-left">
-          <div className="flex flex-col gap-10 text-lg">
+          <div className="flex flex-col gap-10 text-lg px-2">
             <p>
               Pour faciliter la réparation de vos appareils, nous proposons <strong>un service de proximité</strong> :<br />
               notre équipe vient directement à <strong>votre domicile</strong> pour récupérer votre matériel endommagé, puis vous le <strong>ramène</strong> une fois la réparation effectuée.
@@ -79,7 +79,7 @@ const HomePage = () => {
       {/* Blockquote Section */}
       <section className="w-full flex flex-col items-center gap-10 py-20 bg-gray-100">
         <blockquote className="max-w-[850px] text-center text-2xl font-bold">
-          <p>
+          <p className="px-4">
             Faites le choix de la qualité, de la fiabilité et de la réactivité : laissez-nous vous accompagner pour retrouver des appareils comme neufs.
           </p>
         </blockquote>
@@ -88,7 +88,7 @@ const HomePage = () => {
       {/* CarouselAnnonces Section */}
       <section className="w-full flex flex-col items-center gap-10 py-20">
         <h2 className="text-xl font-bold">Nos dernières annonces</h2>
-        <article className="w-full max-w-[850px] items-center gap-10 text-lg">
+        <article className="w-full max-w-[850px] items-center gap-10 text-lg px-2">
           <p>
             Vous recherchez des appareils et accessoires d’occasion?<br/> Parcourez nos annonces mises à jour sur Le Bon Coin, directement accessibles depuis notre site pour dénicher des produits au meilleur rapport qualité-prix.
           </p>
@@ -104,7 +104,7 @@ const HomePage = () => {
       {/* Engagements Section */}
       <section className="w-full flex flex-col items-center gap-10 bg-gray-100 py-20">
         <h2 className="text-xl font-bold">Nos engagements</h2>
-        <article className="flex flex-col sm:flex-row max-w-[850px] items-center gap-10 text-left">
+        <article className="flex flex-col px-4 sm:flex-row max-w-[850px] items-center gap-10 text-left">
           <p>
             En tant que professionnels de la réparation, nous nous engageons à vous fournir un service de qualité, rapide et transparent. Nos techniciens sont formés pour intervenir sur tous les modèles de smartphones, tablettes et consoles de jeux, et utilisent des pièces détachées de qualité pour garantir des réparations durables.
             <br />
