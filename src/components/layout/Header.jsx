@@ -45,7 +45,9 @@ const Header = () => {
       <div className="header-border-gradient flex h-auto w-full flex-row items-center justify-between px-4 py-2 lg:px-10">
         <section className="flex h-full">
           <div className="flex items-center justify-center gap-2">
+            <Link to="/">
             <img src={Logo} alt="Indenum" className="h-auto w-52" />
+            </Link>
           </div>
         </section>
 
