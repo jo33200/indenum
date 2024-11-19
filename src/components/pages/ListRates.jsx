@@ -1,5 +1,5 @@
-import React, { useState } from "react";
 import PropTypes from "prop-types";
+import React, { useEffect, useState } from "react";
 import CardRate from "./CardRate";
 import ModalRate from "./ModalRate";
 
@@ -11,6 +11,25 @@ const extractPrice = (priceStr) => {
 const ListRates = ({ ratesData, selectedFilters }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedRate, setSelectedRate] = useState(null);
+
+  // Utilisation de useEffect pour contrôler le défilement du body
+  useEffect(() => {
+    if (isModalOpen) {
+      // Désactive le scroll mais garde la barre de scroll visible
+      document.body.style.overflow = "hidden"; // Empêche le défilement
+      document.body.style.paddingRight = "17px"; // Compense la largeur de la barre de scroll (environ 17px)
+    } else {
+      // Réactive le scroll et réinitialise le padding
+      document.body.style.overflow = "auto";
+      document.body.style.paddingRight = "0"; // Réinitialise le padding
+    }
+
+    // Nettoyage lorsque le composant est démonté ou la modal est fermée
+    return () => {
+      document.body.style.overflow = "auto";
+      document.body.style.paddingRight = "0";
+    };
+  }, [isModalOpen]);
 
   const filterRates = (rates) => {
     return rates.filter((rate) => {
@@ -51,8 +70,8 @@ const ListRates = ({ ratesData, selectedFilters }) => {
   };
 
   return (
-    <div>
-      <div className="item-center grid w-full max-w-[1144px] grid-cols-2 justify-center gap-5 sm:grid-cols-3 sm:justify-between sm:gap-3 lg:w-7/12 lg:gap-3 xl:w-auto xl:grid-cols-4 xl:gap-10">
+    <div className="flex justify-center">
+      <div className="item-center grid w-full grid-cols-2 justify-center gap-2 sm:grid-cols-3 sm:justify-between sm:gap-3 lg:grid-cols-4 lg:gap-3 xl:w-auto">
         {filteredRates.length > 0 ? (
           filteredRates.map((rate) => (
             <CardRate
@@ -90,10 +109,9 @@ ListRates.propTypes = {
       price: PropTypes.string.isRequired,
       image: PropTypes.string,
       category: PropTypes.string.isRequired,
-    })
+    }),
   ).isRequired,
   selectedFilters: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
 export default ListRates;
-
