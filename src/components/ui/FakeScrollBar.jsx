@@ -1,15 +1,15 @@
 import PropTypes from "prop-types";
-import { AiFillCaretUp, AiFillCaretDown } from "react-icons/ai";
+import { AiFillCaretDown, AiFillCaretUp } from "react-icons/ai";
 
 const FakeScrollBar = ({ visible }) => {
   return (
     visible && (
       <div
-        className="absolute top-0 right-0 z-10 h-full w-[17px] bg-gray-200 flex flex-col items-center"
+        className="absolute right-0 top-0 z-10 flex h-full w-[17px] flex-col items-center bg-gray-200"
         aria-hidden="true"
       >
-        <AiFillCaretUp className="text-gray-400 mt-1 text-[10px]" />
-        <AiFillCaretDown className="text-gray-400 mt-auto mb-1 text-[10px]" />
+        <AiFillCaretUp className="mt-1 text-[10px] text-gray-400" />
+        <AiFillCaretDown className="mb-1 mt-auto text-[10px] text-gray-400" />
       </div>
     )
   );
