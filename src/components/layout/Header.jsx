@@ -46,7 +46,7 @@ const Header = () => {
         <section className="flex h-full">
           <div className="flex items-center justify-center gap-2">
             <Link to="/">
-            <img src={Logo} alt="Indenum" className="h-auto w-52" />
+              <img src={Logo} alt="Indenum" className="h-auto w-52" />
             </Link>
           </div>
         </section>
@@ -167,12 +167,15 @@ const Header = () => {
         </nav>
       )}
       <Modal isOpen={isModalOpen} onClose={closeModal} title="Contactez-nous">
-        <p className="text-gray-700 my-5">
-          Pour toutes demande d’information, N’hésitez pas à nous contacter au numéro suivant :
+        <p className="my-5 text-gray-700">
+          Pour toutes demande d’information, N’hésitez pas à nous contacter au
+          numéro suivant :
         </p>
         <p className="text-gray-700">{phoneNumber}</p>
-        <p className="text-gray-700 mt-5">Nous sommes joignable du lundi au Samedi</p>
-        <p className="text-gray-700 mb-9">de 9h à 19h.</p>
+        <p className="mt-5 text-gray-700">
+          Nous sommes joignable du lundi au Samedi
+        </p>
+        <p className="mb-9 text-gray-700">de 9h à 19h.</p>
       </Modal>
     </header>
   );
