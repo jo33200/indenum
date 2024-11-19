@@ -1,15 +1,15 @@
-import React, { useState, useEffect } from "react";
-import Header from "./components/layout/Header";
+import React, { useEffect, useState } from "react";
+import { Navigate, Route, Routes, useLocation } from "react-router-dom";
 import Footer from "./components/layout/Footer";
-import { Routes, Route, Navigate, useLocation } from "react-router-dom";
+import Header from "./components/layout/Header";
 
-import ScrollTopNavigate from "./components/ui/ScrollTopNavigate";
 import Loader from "./components/ui/Loader";
+import ScrollTopNavigate from "./components/ui/ScrollTopNavigate";
 
-import Home from "./pages/home/home";
 import Ad from "./pages/ad/ad";
-import Quote from "./pages/quote/quote";
 import Contact from "./pages/contact/contact";
+import Home from "./pages/home/home";
+import Quote from "./pages/quote/quote";
 import Rates from "./pages/rates/rates";
 
 function App() {
