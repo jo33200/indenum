@@ -2,9 +2,9 @@ import PropTypes from "prop-types";
 import ContactMap from "../common/ContactMap";
 
 const ContactInfo = ({ isFooter = false }) => (
-  <div className={isFooter ? "" : "mx-auto flex max-w-lg flex-col gap-24 p-8"}>
+  <div className={isFooter ? "" : "mx-auto flex max-w-lg flex-col gap-10 lg:gap-24 p-8 "}>
     {!isFooter && (
-      <h2 className="mb-2 text-center text-2xl font-bold">Contact</h2>
+      <h2 className=" text-center text-2xl font-bold">Contact</h2>
     )}
 
     <nav className="h-auto w-auto">
