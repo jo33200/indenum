@@ -41,7 +41,7 @@ const Header = () => {
   };
 
   return (
-    <header className="relative z-50 h-auto w-full bg-white">
+    <header className="fixed md:relative top-0 z-50 h-auto w-full bg-white">
       <div className="header-border-gradient flex h-auto w-full flex-row items-center justify-between px-4 py-2 lg:px-10">
         <section className="flex h-full">
           <div className="flex items-center justify-center gap-2">
