@@ -14,15 +14,17 @@ const ListRates = ({ ratesData, selectedFilters }) => {
 
   // Utilisation de useEffect pour contrôler le défilement du body
   useEffect(() => {
+    const isDesktop = window.innerWidth >= 1024; // Vérifie si on est sur un écran plus grand qu'une tablette
+    const isTabletteOrMobile = window.innerWidth < 1024; // Vérifie si on est sur une tablette ou un mobile
+
     if (isModalOpen) {
-      // Désactive le scroll mais garde la barre de scroll visible
-      document.body.style.overflow = "hidden"; // Empêche le défilement
-      document.body.style.paddingRight = "17px"; // Compense la largeur de la barre de scroll (environ 17px)
-    } else {
-      // Réactive le scroll et réinitialise le padding
-      document.body.style.overflow = "auto";
-      document.body.style.paddingRight = "0"; // Réinitialise le padding
-    }
+      if (isDesktop) {
+        document.body.style.overflow = "hidden"; // Désactive le scroll
+        document.body.style.paddingRight = "17px"; // Ajoute le padding droit
+      } else if (isTabletteOrMobile) {
+      document.body.style.overflow = "hidden"; // Désactive le scroll
+      }
+    } 
 
     // Nettoyage lorsque le composant est démonté ou la modal est fermée
     return () => {
