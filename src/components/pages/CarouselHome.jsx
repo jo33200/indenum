@@ -38,7 +38,7 @@ const Carousel = () => {
   }, []);
 
   return (
-    <div className="relative flex h-24 w-full items-center justify-center">
+    <div className="relative flex md:h-24 w-full items-center justify-center">
       {/* Slogans */}
       {slogans.map((slogan, index) => (
         <p
