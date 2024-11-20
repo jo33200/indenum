@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import ListAd from "../../components/pages/ListAd.jsx";
 import Filters from "../../components/common/filters";
+import ListAd from "../../components/pages/ListAd.jsx";
 import ScrollToTopButton from "../../components/ui/ScrollToTopButton.jsx";
 import adsDataJson from "../../data/ad.json";
 
@@ -84,7 +84,7 @@ const Ad = () => {
   }
 
   return (
-    <div className="my-5 flex h-auto w-full flex-col items-start gap-5 px-2 sm:w-full md:flex-row md:items-start md:justify-around xl:my-32">
+    <div className="my-24 flex h-auto w-full flex-col items-start gap-5 px-2 sm:w-full md:my-5 md:flex-row md:items-start md:justify-around xl:my-32">
       <div className="w-full md:w-80">
         <Filters
           filterData={filterData}
