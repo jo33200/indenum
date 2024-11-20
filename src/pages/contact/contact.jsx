@@ -3,7 +3,7 @@ import ContactInfo from "../../components/common/ContactInfo";
 
 const Contact = () => {
   return (
-    <div className="flex h-auto lg:min-h-screen w-full flex-col items-center justify-center gap-10 lg:flex-row lg:justify-around xl:w-2/3 xl:justify-between">
+    <div className="my-16 md:my-0 flex h-auto lg:min-h-screen w-full flex-col items-center justify-center gap-10 lg:flex-row lg:justify-around xl:w-2/3 xl:justify-between">
       <section className="mt-5 w-full">
         <ContactInfo />
       </section>
