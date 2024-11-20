@@ -93,7 +93,7 @@ const Rate = () => {
   }
 
   return (
-    <div className="my-8 flex h-auto w-full flex-col items-start gap-8 px-2 sm:w-full md:flex-row md:items-start md:justify-around xl:my-32">
+    <div className="mt-24 md:mt-8 mb-8 flex h-auto w-full flex-col items-start gap-8 px-2 sm:w-full md:flex-row md:items-start md:justify-around xl:my-32">
       {/* Filtres */}
       <div className="flex w-full md:w-80 md:flex-col">
         <Filters
